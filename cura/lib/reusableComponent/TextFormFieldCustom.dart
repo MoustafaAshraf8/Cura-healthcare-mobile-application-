@@ -3,7 +3,13 @@ import '../model/AppTheme.dart';
 
 class TextFormFieldCustom extends StatefulWidget {
   final String placeholder;
-  const TextFormFieldCustom({super.key, this.placeholder = "placeholder"});
+  final TextEditingController? textFieldController;
+  final bool password;
+  TextFormFieldCustom(
+      {super.key,
+      this.placeholder = "placeholder",
+      this.password = false,
+      this.textFieldController});
 
   @override
   State<TextFormFieldCustom> createState() => _TextFormFieldCustomState();
@@ -13,19 +19,23 @@ class _TextFormFieldCustomState extends State<TextFormFieldCustom> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       margin: EdgeInsets.only(top: 10, bottom: 10),
       padding: EdgeInsets.all(0),
       child: TextFormField(
-        validator: (value) {
-          print(value);
-          if (value == null ||
-              value.isEmpty ||
-              !value.contains('@') ||
-              !value.contains('.')) {
-            return 'Invalid Email';
-          }
-          return null;
-        },
+        // validator: (value) {
+        //   print(value);
+        //   if (value == null ||
+        //       value.isEmpty ||
+        //       !value.contains('@') ||
+        //       !value.contains('.')) {
+        //     return 'Invalid Email';
+        //   }
+        //   return null;
+        // },
+        obscureText: widget.password,
+        obscuringCharacter: "*",
+        controller: widget.textFieldController,
         keyboardType: TextInputType.text,
         cursorColor: AppTheme.textField_Border_light,
         decoration: InputDecoration(
