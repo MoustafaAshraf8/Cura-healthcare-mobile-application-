@@ -1,4 +1,3 @@
-import 'package:cura/page/SignUpPage/getStep.dart';
 import 'package:flutter/material.dart';
 
 import '../../../reusableComponent/CustomButton.dart';

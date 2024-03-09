@@ -1,4 +1,5 @@
 import 'package:cura/model/AppTheme.dart';
+import 'package:cura/page/HomePage/HomePage.dart';
 import 'package:cura/page/SignUpPage/SignUpPage.dart';
 import 'package:flutter/material.dart';
 import 'page/LogInPage/LogInPage.dart';
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      initialRoute: '/signuppage',
+      initialRoute: '/homepage',
       routes: {
+        '/homepage': (context) => const HomePage(),
         '/loginpage': (context) => const LogInPage(),
         '/signuppage': (context) => const SignUpPage(),
       },

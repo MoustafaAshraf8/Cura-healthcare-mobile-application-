@@ -8,10 +8,11 @@ class TextTheme {
 class AppTheme {
   // app
   // static Color background_light_Primary = const Color(0xff0174BE); // default
-  static Color background_light_Primary = Color.fromARGB(255, 37, 130, 188);
+  // static Color background_light_Primary = Color.fromARGB(255, 37, 130, 188);
+  static Color background_light_Primary = Color.fromARGB(255, 78, 170, 227);
   // static Color background_light_Primary = Colors.white;
   // static Color background_light_Secondart = const Color(0xffF6B17A); // default
-  static Color background_light_Secondart =
+  static Color background_light_Secondary =
       Color.fromARGB(255, 247, 169, 106); // default
   static Color background_light_Third = Colors.orange;
 

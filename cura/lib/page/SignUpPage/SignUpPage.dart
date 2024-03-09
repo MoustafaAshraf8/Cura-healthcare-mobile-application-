@@ -1,11 +1,9 @@
 import 'package:cura/page/SignUpPage/layout/Webpage.dart';
 import 'package:cura/page/SignUpPage/layout/mobile.dart';
 import 'package:cura/responsive/ResponsiveWidget.dart';
-import 'package:cura/reusableComponent/AppBar_custom.dart';
+import 'package:cura/reusableComponent/SafeLayout.dart';
 import 'package:flutter/material.dart';
-import '../../model/AppTheme.dart';
 import '../../reusableComponent/TextFormFieldCustom.dart';
-import '../../reusableComponent/CustomButton.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -32,42 +30,18 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     // SafeArea for the system components (ex: Android status bar)
-    return SafeArea(
-      top: true,
-      bottom: true,
-      left: true,
-      right: true,
-      maintainBottomViewPadding: true,
-      // minimum:
-      //     const EdgeInsets.only(bottom: 10.0, top: 0.0, left: 0.0, right: 0.0),
-      child: Scaffold(
-          backgroundColor: AppTheme.background_light_Primary,
-          appBar: appBar("SignUp"),
-          body: SafeArea(
-              top: true,
-              bottom: true,
-              left: true,
-              right: true,
-              maintainBottomViewPadding: true,
-              minimum: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.05,
-                  bottom: MediaQuery.of(context).size.height * 0.05,
-                  left: MediaQuery.of(context).size.width * 0.05,
-                  right: MediaQuery.of(context).size.width * 0.05),
-              child: ResponsiveWidget(
-                  mobile: Mobile(
-                      emailTextFormFieldController:
-                          emailTextFormFieldController,
-                      passwordTextFormFieldController:
-                          passwordTextFormFieldController,
-                      printValues: printValues),
-                  webpage: Webpage(
-                      emailTextFormFieldController:
-                          emailTextFormFieldController,
-                      passwordTextFormFieldController:
-                          passwordTextFormFieldController,
-                      printValues: printValues)))),
-    );
+    return SafeLayout(
+        widget: ResponsiveWidget(
+            mobile: Mobile(
+                emailTextFormFieldController: emailTextFormFieldController,
+                passwordTextFormFieldController:
+                    passwordTextFormFieldController,
+                printValues: printValues),
+            webpage: Webpage(
+                emailTextFormFieldController: emailTextFormFieldController,
+                passwordTextFormFieldController:
+                    passwordTextFormFieldController,
+                printValues: printValues)));
   }
 
   List<Step> getSteps() {
