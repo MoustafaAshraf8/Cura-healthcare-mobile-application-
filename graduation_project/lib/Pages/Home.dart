@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/PrimaryHeaderContainer.dart';
 import 'package:graduation_project/Contants/CustomShapes/ImagesSlider/BannerSlider.dart';
+import 'package:graduation_project/Contants/CustomShapes/SearchBar/SearchBar.dart';
 
 //Category class to be added to the slider(Listview.builder)
 class Category {
   String imgPath;
   String title;
+  String route;
 
-  Category({required this.imgPath, required this.title});
+  Category({required this.imgPath, required this.title, required this.route});
 }
 
 class Home extends StatefulWidget {
@@ -22,12 +24,28 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 //The List "items" of type Category to be added to the Listview.builder --
   List<Category> items = [
-    Category(imgPath: "assets/img/Categories/1.jpg", title: "Clinic Visit"),
-    Category(imgPath: "assets/img/Categories/2.jpg", title: "Home Visit"),
-    Category(imgPath: "assets/img/Categories/3.jpg", title: "EMR"),
-    Category(imgPath: "assets/img/Categories/4.jpg", title: "ChatBot"),
-    Category(imgPath: "assets/img/Categories/5.jpg", title: "Offers"),
-    Category(imgPath: "assets/img/Categories/6.jpg", title: "About Us"),
+    Category(
+        imgPath: "assets/img/Categories/1.jpg",
+        title: "Clinic Visit",
+        route: "/Speciality"),
+    Category(
+        imgPath: "assets/img/Categories/2.jpg",
+        title: "Home Visit",
+        route: "/Speciality"),
+    Category(
+        imgPath: "assets/img/Categories/3.jpg", title: "EMR", route: "/Home"),
+    Category(
+        imgPath: "assets/img/Categories/4.jpg",
+        title: "ChatBot",
+        route: "/Home"),
+    Category(
+        imgPath: "assets/img/Categories/5.jpg",
+        title: "Offers",
+        route: "/Home"),
+    Category(
+        imgPath: "assets/img/Categories/6.jpg",
+        title: "About Us",
+        route: "/Home"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -72,37 +90,7 @@ class _HomeState extends State<Home> {
                       height: 32.0,
                     ),
                     //SearchBar
-                    GestureDetector(
-                      onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                        child: Container(
-                          width: 400,
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(16),
-                              border: Border.all(color: Colors.grey)),
-                          child: const Row(
-                            children: [
-                              Icon(
-                                Icons.search_rounded,
-                                color: Color.fromARGB(255, 8, 55, 102),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "Search for Appointment ..",
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 8, 55, 102),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
+                    const Searchbar(),
                     const SizedBox(
                       height: 32.0,
                     ),
@@ -131,7 +119,10 @@ class _HomeState extends State<Home> {
                               itemCount: items.length,
                               itemBuilder: (_, index) {
                                 return GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, items[index].route);
+                                  },
                                   child: Padding(
                                     padding: const EdgeInsets.only(right: 16.0),
                                     child: Column(

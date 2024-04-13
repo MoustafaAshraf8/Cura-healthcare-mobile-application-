@@ -23,7 +23,7 @@ class SignUp extends StatelessWidget {
                         height: 300,
                         width: 600,
                         child: Image.asset(
-                          "assets/img/Cura.png",
+                          "assets/img/Logo/Cura.png",
                           fit: BoxFit.cover,
                         ),
                       ),
