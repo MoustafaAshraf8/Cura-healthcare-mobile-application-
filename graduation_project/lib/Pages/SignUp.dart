@@ -29,6 +29,10 @@ class _SignUpState extends State<SignUp> {
       TextEditingController();
 
   var loading = false;
+  var changeRoute = false;
+  void changeRouteFunction() {
+    Navigator.of(context).pushReplacementNamed("/Home");
+  }
 
   void revertLoading() {
     setState(() {
@@ -37,19 +41,17 @@ class _SignUpState extends State<SignUp> {
   }
 
   void signUpRequest() async {
-    print("firstName: ${firstNameTextEditingController.value.text}");
-    print("lastName: ${lastNameTextEditingController.value.text}");
-    print("email: ${emailTextEditingController.value.text}");
-    print("password: ${passwordTextEditingController.value.text}");
-    print("phoneNumber: ${phoneNumberTextEditingController.value.text}");
     Patient patient = Patient(
         FirstName: firstNameTextEditingController.value.text,
         LastName: lastNameTextEditingController.value.text,
         Email: emailTextEditingController.value.text,
         Password: passwordTextEditingController.value.text,
-        PatientPhoneNumber:
-            int.parse(phoneNumberTextEditingController.value.text));
-    createPatient(patient: patient, revertLoading: revertLoading);
+        PhoneNumber: int.parse(phoneNumberTextEditingController.value.text));
+    changeRoute =
+        await createPatient(patient: patient, revertLoading: revertLoading);
+    if (changeRoute) {
+      changeRouteFunction();
+    }
   }
 
   @override
