@@ -123,7 +123,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ? currentIndex++
                   : Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignUp()),
+                      MaterialPageRoute(builder: (context) => SignUp()),
                     );
             });
           },
@@ -143,7 +143,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           setState(() {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SignUp()),
+              MaterialPageRoute(builder: (context) => SignUp()),
             );
           });
         },
