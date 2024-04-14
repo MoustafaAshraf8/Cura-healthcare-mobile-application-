@@ -100,7 +100,7 @@ class _ScheduleScreenState extends State<Schedule> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 25),
+                            vertical: 12, horizontal: 20),
                         decoration: BoxDecoration(
                           color: _buttonIndex == 0
                               ? const Color(0xFF11519b)
@@ -127,7 +127,7 @@ class _ScheduleScreenState extends State<Schedule> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 25),
+                            vertical: 12, horizontal: 20),
                         decoration: BoxDecoration(
                           color: _buttonIndex == 1
                               ? const Color(0xFF11519b)
@@ -154,7 +154,7 @@ class _ScheduleScreenState extends State<Schedule> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 12, horizontal: 25),
+                            vertical: 12, horizontal: 20),
                         decoration: BoxDecoration(
                           color: _buttonIndex == 2
                               ? const Color(0xFF11519b)
@@ -192,34 +192,6 @@ class _ScheduleScreenState extends State<Schedule> {
         ),
 
         ///Navigation Bar --Page Footer--
-        bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.white,
-          color: const Color.fromARGB(255, 8, 55, 102),
-          animationDuration: const Duration(milliseconds: 300),
-          onTap: (value) {},
-          items: const [
-            Icon(
-              Icons.home_rounded,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-            Icon(
-              Icons.person,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-            Icon(
-              Icons.history,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-            Icon(
-              Icons.message_rounded,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-            Icon(
-              Icons.payment_rounded,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-          ],
-        ),
       ),
     );
   }

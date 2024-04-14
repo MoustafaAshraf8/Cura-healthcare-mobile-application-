@@ -8,6 +8,7 @@ class AppRouter {
   static String _doctorProfile = "/DoctorProfile";
   static String _doctorList = "/DoctorsList";
   static String _schedule = "/Schedule";
+  static String _mainLayout = "/MainLayout";
 
   constructor() {}
 
@@ -45,6 +46,10 @@ class AppRouter {
 
   static String getScheduleList() {
     return _schedule;
+  }
+
+  static String getMainLayoutRouter() {
+    return _mainLayout;
   }
 }
 

@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/MainLayout.dart';
 import './class/AppRouter.dart';
 import 'package:graduation_project/Pages/DoctorProfile.dart';
 import 'package:graduation_project/Pages/DoctorsList.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: Home(),
-      initialRoute: "/Home",
+      initialRoute: AppRouter.getMainLayoutRouter(),
       // routes: {
       //   "/Onboarding": (context) => OnboardingPage(),
       //   "/SignUp": (context) => SignUp(),
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
       //   "/Schedule": (context) => Schedule(),
       // },
       routes: {
+        AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
         AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
         AppRouter.getSignUpRoute(): (context) => SignUp(),
         AppRouter.getLoginRoute(): (context) => Login(),

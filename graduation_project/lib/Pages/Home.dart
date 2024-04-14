@@ -49,183 +49,149 @@ class _HomeState extends State<Home> {
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              ///Header --Page Header-- (Blue Part)
-              PrimaryHeaderContainer(
-                child: Column(
-                  children: [
-                    //Header AppBar
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    const TAppBar(
-                      title: Column(
-                        //crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Welcome Back!",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.white)),
-                          Text("Adham Mohamed",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white)),
-                        ],
-                      ),
-                      actions: [
-                        Icon(
-                          Icons.notification_add,
-                          color: Colors.white,
-                          size: 27,
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 32.0,
-                    ),
-                    //SearchBar
-                    const Searchbar(),
-                    const SizedBox(
-                      height: 32.0,
-                    ),
-                    //Categories Slider
-                    Padding(
-                      padding: const EdgeInsets.only(left: 24.0),
-                      child: Column(
-                        children: [
-                          // -Heading-
-                          const Text(
-                            "Categories",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(
-                            height: 16.0,
-                          ),
-                          // -Slider-
-                          SizedBox(
-                            height: 120,
-                            child: ListView.builder(
-                              shrinkWrap: true,
-                              scrollDirection: Axis.horizontal,
-                              itemCount: items.length,
-                              itemBuilder: (_, index) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, items[index].route);
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(right: 16.0),
-                                    child: Column(
-                                      children: [
-                                        //Circular Icon
-                                        Expanded(
-                                          child: Container(
-                                            width: 90,
-                                            height: 40,
-                                            padding: const EdgeInsets.all(8.0),
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(200)),
-                                            child: Center(
-                                                child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(200),
-                                              child: Image(
-                                                image: AssetImage(
-                                                    items[index].imgPath),
-                                                fit: BoxFit.cover,
-                                                //color: Colors.black,
-                                              ),
-                                            )),
-                                          ),
-                                        ),
-                                        //Text Under The Circular Icon
-                                        const SizedBox(
-                                          height: 8.0,
-                                        ),
-                                        SizedBox(
-                                          width: 70,
-                                          child: Center(
-                                            child: Text(
-                                              items[index].title,
-                                              style: const TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 14.0,
-                                                  fontWeight: FontWeight.bold),
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
-                          )
-                        ],
-                      ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ///Header --Page Header-- (Blue Part)
+          PrimaryHeaderContainer(
+            child: Column(
+              children: [
+                //Header AppBar
+                const SizedBox(
+                  height: 5,
+                ),
+                const TAppBar(
+                  title: Column(
+                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Welcome Back!",
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontStyle: FontStyle.italic,
+                              color: Colors.white)),
+                      Text("Adham Mohamed",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                    ],
+                  ),
+                  actions: [
+                    Icon(
+                      Icons.notification_add,
+                      color: Colors.white,
+                      size: 27,
                     )
                   ],
                 ),
-              ),
-
-              ///Body --Page Body-- (White Part)
-              const Padding(
-                padding: EdgeInsets.all(24.0),
-
-                ///ImageBaneerSlider
-                child: BannerSlider(banners: [
-                  "assets/img/Banners/Banner1.jpg",
-                  "assets/img/Banners/Banner2.jpg",
-                  "assets/img/Banners/Banner3.jpg"
-                ]),
-              )
-            ],
+                const SizedBox(
+                  height: 32.0,
+                ),
+                //SearchBar
+                const Searchbar(),
+                const SizedBox(
+                  height: 32.0,
+                ),
+                //Categories Slider
+                Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Column(
+                    children: [
+                      // -Heading-
+                      const Text(
+                        "Categories",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 16.0,
+                      ),
+                      // -Slider-
+                      SizedBox(
+                        height: 120,
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: items.length,
+                          itemBuilder: (_, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, items[index].route);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 16.0),
+                                child: Column(
+                                  children: [
+                                    //Circular Icon
+                                    Expanded(
+                                      child: Container(
+                                        width: 90,
+                                        height: 40,
+                                        padding: const EdgeInsets.all(8.0),
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(200)),
+                                        child: Center(
+                                            child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(200),
+                                          child: Image(
+                                            image: AssetImage(
+                                                items[index].imgPath),
+                                            fit: BoxFit.cover,
+                                            //color: Colors.black,
+                                          ),
+                                        )),
+                                      ),
+                                    ),
+                                    //Text Under The Circular Icon
+                                    const SizedBox(
+                                      height: 8.0,
+                                    ),
+                                    SizedBox(
+                                      width: 70,
+                                      child: Center(
+                                        child: Text(
+                                          items[index].title,
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14.0,
+                                              fontWeight: FontWeight.bold),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
 
-        ///Navigation Bar --Page Footer--
-        bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.white,
-          color: const Color.fromARGB(255, 8, 55, 102),
-          animationDuration: const Duration(milliseconds: 300),
-          onTap: (value) {},
-          items: const [
-            Icon(
-              Icons.home_rounded,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-            Icon(
-              Icons.person,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-            Icon(
-              Icons.history,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-            Icon(
-              Icons.message_rounded,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-            Icon(
-              Icons.payment_rounded,
-              color: Color.fromARGB(255, 255, 195, 106),
-            ),
-          ],
-        ),
+          ///Body --Page Body-- (White Part)
+          const Padding(
+            padding: EdgeInsets.all(24.0),
+
+            ///ImageBaneerSlider
+            child: BannerSlider(banners: [
+              "assets/img/Banners/Banner1.jpg",
+              "assets/img/Banners/Banner2.jpg",
+              "assets/img/Banners/Banner3.jpg"
+            ]),
+          )
+        ],
       ),
     );
   }
