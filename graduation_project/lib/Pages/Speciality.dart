@@ -114,7 +114,7 @@ class _SpecialityState extends State<Speciality> {
                   child: GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
+                      crossAxisCount: 2,
                       childAspectRatio: 4 / 4,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,

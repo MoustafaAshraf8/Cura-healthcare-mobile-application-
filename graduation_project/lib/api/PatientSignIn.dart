@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../class/User.dart';
+import '../model/User.dart';
 
 Future<bool> signIn(
     {required User user, required Function revertLoading}) async {

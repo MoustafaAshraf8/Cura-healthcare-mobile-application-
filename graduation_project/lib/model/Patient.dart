@@ -1,7 +1,3 @@
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
-
 class Patient {
   final String FirstName;
   final String LastName;

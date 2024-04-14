@@ -1,10 +1,10 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import "../class/AppRouter.dart";
 import 'package:graduation_project/Contants/CustomShapes/CustomLoading/CustomLoading.dart';
-import 'package:graduation_project/Pages/Home.dart';
 import 'package:graduation_project/Pages/SignUp.dart';
-import 'package:graduation_project/class/User.dart';
+import 'package:graduation_project/model/User.dart';
 import '../api/PatientSignIn.dart';
 
 class Login extends StatefulWidget {
@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   var loading = false;
   var changeRoute = false;
   void changeRouteFunction() {
-    Navigator.of(context).pushReplacementNamed("/Home");
+    Navigator.of(context).pushReplacementNamed(AppRouter.getHomeRoute());
   }
 
   void revertLoading() {

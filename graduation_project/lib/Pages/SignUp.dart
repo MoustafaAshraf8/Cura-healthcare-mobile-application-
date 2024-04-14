@@ -2,7 +2,8 @@
 import '../Contants/CustomShapes/CustomLoading/CustomLoading.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/Login.dart';
-import '../class/Patient.dart';
+import '../class/AppRouter.dart';
+import '../model/Patient.dart';
 import '../api/PatientSignUp.dart';
 
 class SignUp extends StatefulWidget {
@@ -31,7 +32,7 @@ class _SignUpState extends State<SignUp> {
   var loading = false;
   var changeRoute = false;
   void changeRouteFunction() {
-    Navigator.of(context).pushReplacementNamed("/Home");
+    Navigator.of(context).pushReplacementNamed(AppRouter.getHomeRoute());
   }
 
   void revertLoading() {

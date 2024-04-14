@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../class/Patient.dart';
+import '../model/Patient.dart';
 
 Future<bool> createPatient(
     {required Patient patient, required Function revertLoading}) async {

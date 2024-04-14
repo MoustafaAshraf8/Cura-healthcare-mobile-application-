@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import './class/AppRouter.dart';
 import 'package:graduation_project/Pages/DoctorProfile.dart';
 import 'package:graduation_project/Pages/DoctorsList.dart';
 import 'package:graduation_project/Pages/Home.dart';
@@ -23,17 +24,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: Home(),
-      initialRoute: "/Login",
+      initialRoute: "/Home",
+      // routes: {
+      //   "/Onboarding": (context) => OnboardingPage(),
+      //   "/SignUp": (context) => SignUp(),
+      //   "/Login": (context) => Login(),
+      //   "/Home": (context) => Home(),
+      //   "/Speciality": (context) => Speciality(),
+      //   "/Profile": (context) => Profile(),
+      //   "/DoctorProfile": (context) => DoctorProfile(),
+      //   "/DoctorsList": (context) => DoctorsList(),
+      //   "/Schedule": (context) => Schedule(),
+      // },
       routes: {
-        "/Onboarding": (context) => OnboardingPage(),
-        "/SignUp": (context) => SignUp(),
-        "/Login": (context) => Login(),
-        "/Home": (context) => Home(),
-        "/Speciality": (context) => Speciality(),
-        "/Profile": (context) => Profile(),
-        "/DoctorProfile": (context) => DoctorProfile(),
-        "/DoctorsList": (context) => DoctorsList(),
-        "/Schedule": (context) => Schedule(),
+        AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
+        AppRouter.getSignUpRoute(): (context) => SignUp(),
+        AppRouter.getLoginRoute(): (context) => Login(),
+        AppRouter.getHomeRoute(): (context) => Home(),
+        AppRouter.getSpecialityRoute(): (context) => Speciality(),
+        AppRouter.getProfileRoute(): (context) => Profile(),
+        AppRouter.getDoctorProfileRoute(): (context) => DoctorProfile(),
+        AppRouter.getDoctorListRoute(): (context) => DoctorsList(),
+        AppRouter.getScheduleList(): (context) => Schedule(),
       },
     );
   }
