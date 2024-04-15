@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: Home(),
-      initialRoute: AppRouter.getHomeRoute(),
+      initialRoute: AppRouter.getForgetPasswordRoute(),
       // routes: {
       //   "/Onboarding": (context) => OnboardingPage(),
       //   "/SignUp": (context) => SignUp(),
