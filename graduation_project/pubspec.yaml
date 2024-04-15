@@ -43,6 +43,7 @@ dependencies:
   loading_indicator: ^3.1.1
   http: ^1.1.0
   dio: ^5.4.3+1
+  pinput: ^2.2.11
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
     - assets/img/Banners/
     - assets/img/Specialities/
     - assets/img/Icons/
+    - assets/img/ForgetPassword/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

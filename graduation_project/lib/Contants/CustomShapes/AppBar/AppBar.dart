@@ -30,6 +30,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
                 icon: const Icon(
                   Icons.arrow_circle_left_outlined,
                   size: 27,
+                  color: Colors.white,
                 ))
             : leadingIcon != null
                 ? IconButton(

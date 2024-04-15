@@ -1,6 +1,9 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/ForgetPassword/ForgetPassword.dart';
+import 'package:graduation_project/Pages/ForgetPassword/ResetPassword.dart';
+import 'package:graduation_project/Pages/ForgetPassword/VerificationCode.dart';
 import './class/AppRouter.dart';
 import 'package:graduation_project/Pages/DoctorProfile.dart';
 import 'package:graduation_project/Pages/DoctorsList.dart';
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: Home(),
-      initialRoute: "/Home",
+      initialRoute: AppRouter.getHomeRoute(),
       // routes: {
       //   "/Onboarding": (context) => OnboardingPage(),
       //   "/SignUp": (context) => SignUp(),
@@ -46,6 +49,9 @@ class MyApp extends StatelessWidget {
         AppRouter.getDoctorProfileRoute(): (context) => DoctorProfile(),
         AppRouter.getDoctorListRoute(): (context) => DoctorsList(),
         AppRouter.getScheduleList(): (context) => Schedule(),
+        AppRouter.getForgetPasswordRoute(): (context) => ForgetPassword(),
+        AppRouter.getVerificationCodeRoute(): (context) => VerificationCode(),
+        AppRouter.getResetPasswordRoute(): (context) => ResetPassword(),
       },
     );
   }

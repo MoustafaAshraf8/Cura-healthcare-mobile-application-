@@ -8,6 +8,9 @@ class AppRouter {
   static String _doctorProfile = "/DoctorProfile";
   static String _doctorList = "/DoctorsList";
   static String _schedule = "/Schedule";
+  static String _forgetPassword = "/ForgetPassword";
+  static String _verificationCode = "/VerificationCode";
+  static String _resetPassword = "/ResetPassword";
 
   constructor() {}
 
@@ -45,6 +48,18 @@ class AppRouter {
 
   static String getScheduleList() {
     return _schedule;
+  }
+
+  static String getForgetPasswordRoute() {
+    return _forgetPassword;
+  }
+
+  static String getVerificationCodeRoute() {
+    return _verificationCode;
+  }
+
+  static String getResetPasswordRoute() {
+    return _resetPassword;
   }
 }
 
