@@ -115,7 +115,7 @@ class _DoctorsListState extends State<DoctorsList> {
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
+                      crossAxisCount: 1),
                   itemCount: items.length,
                   itemBuilder: (context, index) {
                     return InkWell(

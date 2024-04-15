@@ -46,7 +46,8 @@ class MyApp extends StatelessWidget {
         AppRouter.getSpecialityRoute(): (context) => Speciality(),
         AppRouter.getProfileRoute(): (context) => Profile(),
         AppRouter.getDoctorProfileRoute(): (context) => DoctorProfile(),
-        AppRouter.getDoctorListRoute(): (context) => DoctorsList(),
+        AppRouter.getDoctorListRoute(): (context) =>
+            DoctorsList(speciality: "default"),
         AppRouter.getScheduleList(): (context) => Schedule(),
       },
     );

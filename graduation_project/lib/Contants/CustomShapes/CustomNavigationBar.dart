@@ -21,10 +21,6 @@ class CustomNavigationBar extends StatelessWidget {
           color: Color.fromARGB(255, 255, 195, 106),
         ),
         Icon(
-          Icons.person,
-          color: Color.fromARGB(255, 255, 195, 106),
-        ),
-        Icon(
           Icons.history,
           color: Color.fromARGB(255, 255, 195, 106),
         ),
@@ -34,6 +30,10 @@ class CustomNavigationBar extends StatelessWidget {
         ),
         Icon(
           Icons.payment_rounded,
+          color: Color.fromARGB(255, 255, 195, 106),
+        ),
+        Icon(
+          Icons.person,
           color: Color.fromARGB(255, 255, 195, 106),
         ),
       ],

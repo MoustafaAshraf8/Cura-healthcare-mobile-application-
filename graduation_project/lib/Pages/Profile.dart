@@ -1,4 +1,3 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/SecondaryHeaderContainer.dart';
@@ -44,9 +43,9 @@ class Profile extends StatelessWidget {
                     clipBehavior: Clip.none,
                     children: [
                       //Profile "Big Circle"
-                      const CircleAvatar(
-                        backgroundImage: AssetImage("assets/img/Logo/Cura.png"),
-                      ),
+                      CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "http://10.0.2.2:80/image/6618fb7db4dfa8686e3fe4d7")),
                       //Camera Icon "Small Circle"
                       Positioned(
                         right: -12,

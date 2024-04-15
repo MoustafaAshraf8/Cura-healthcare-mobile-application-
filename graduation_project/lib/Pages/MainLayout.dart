@@ -14,7 +14,7 @@ class MainLayout extends StatefulWidget {
 
 class _MainLayoutState extends State<MainLayout> {
   int currentView = 0;
-  Map<int, Widget> widgetMap = {0: Home(), 1: Profile(), 2: Schedule()};
+  Map<int, Widget> widgetMap = {0: Home(), 1: Schedule(), 4: Profile()};
 
   void updateView(int index) {
     setState(() {
