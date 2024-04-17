@@ -8,6 +8,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
     this.leadingOnPressed,
     this.showBackArrow = false,
+    this.whiteBackArrow,
   });
 
   final Widget? title;
@@ -15,6 +16,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
+  final bool? whiteBackArrow;
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +29,12 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
         leading: showBackArrow
             ? IconButton(
                 onPressed: () => Navigator.pop(context),
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_circle_left_outlined,
                   size: 27,
-                  color: Colors.white,
+                  color: (whiteBackArrow == true || whiteBackArrow == null)
+                      ? Colors.white
+                      : Colors.black,
                 ))
             : leadingIcon != null
                 ? IconButton(

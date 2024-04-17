@@ -11,6 +11,8 @@ class AppRouter {
   static String _forgetPassword = "/ForgetPassword";
   static String _verificationCode = "/VerificationCode";
   static String _resetPassword = "/ResetPassword";
+  static String _mainLayout = "/MainLayout";
+  static String _aboutus = "/AboutUs";
 
   constructor() {}
 
@@ -60,6 +62,14 @@ class AppRouter {
 
   static String getResetPasswordRoute() {
     return _resetPassword;
+  }
+
+  static String getMainLayoutRouter() {
+    return _mainLayout;
+  }
+
+  static String getAboutUsRoute() {
+    return _aboutus;
   }
 }
 

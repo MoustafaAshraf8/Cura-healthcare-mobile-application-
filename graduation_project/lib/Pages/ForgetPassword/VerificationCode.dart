@@ -19,6 +19,7 @@ class _VerificationCodeState extends State<VerificationCode> {
       child: Scaffold(
         appBar: TAppBar(
           showBackArrow: true,
+          whiteBackArrow: false,
           title: Text("Verification Code",
               style: TextStyle(
                   fontSize: 20,

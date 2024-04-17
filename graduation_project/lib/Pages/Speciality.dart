@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/SecondaryHeaderContainer.dart';
 import 'package:graduation_project/Contants/CustomShapes/SearchBar/SearchBar.dart';
+import 'package:graduation_project/Pages/DoctorsList.dart';
 
 //MedicalSpeciality class to be added to the GridView.builder
 class MedicalSpeciality {
@@ -56,6 +57,17 @@ class _SpecialityState extends State<Speciality> {
         img: "assets/img/Specialities/Allergy and Immunology.jpg",
         text: "Allergy"),
   ];
+
+  void goToSpeciality(String speciality) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => DoctorsList(
+                speciality: speciality,
+              )),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -114,7 +126,7 @@ class _SpecialityState extends State<Speciality> {
                   child: GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
+                      crossAxisCount: 3,
                       childAspectRatio: 4 / 4,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
@@ -122,7 +134,8 @@ class _SpecialityState extends State<Speciality> {
                     itemCount: items.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () =>
+                            goToSpeciality(items.elementAt(index).text),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: Column(

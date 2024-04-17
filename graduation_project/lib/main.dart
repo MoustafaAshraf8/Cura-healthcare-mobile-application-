@@ -1,9 +1,11 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/AboutUs.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ResetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/VerificationCode.dart';
+import 'package:graduation_project/Pages/MainLayout.dart';
 import './class/AppRouter.dart';
 import 'package:graduation_project/Pages/DoctorProfile.dart';
 import 'package:graduation_project/Pages/DoctorsList.dart';
@@ -25,9 +27,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //Line El Theme da 3shan nl3'y ay t3del b3d el flutter upgrade
+      theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
       //home: Home(),
-      initialRoute: AppRouter.getForgetPasswordRoute(),
+      initialRoute: AppRouter.getMainLayoutRouter(),
       // routes: {
       //   "/Onboarding": (context) => OnboardingPage(),
       //   "/SignUp": (context) => SignUp(),
@@ -40,6 +44,7 @@ class MyApp extends StatelessWidget {
       //   "/Schedule": (context) => Schedule(),
       // },
       routes: {
+        AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
         AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
         AppRouter.getSignUpRoute(): (context) => SignUp(),
         AppRouter.getLoginRoute(): (context) => Login(),
@@ -47,11 +52,13 @@ class MyApp extends StatelessWidget {
         AppRouter.getSpecialityRoute(): (context) => Speciality(),
         AppRouter.getProfileRoute(): (context) => Profile(),
         AppRouter.getDoctorProfileRoute(): (context) => DoctorProfile(),
-        AppRouter.getDoctorListRoute(): (context) => DoctorsList(),
+        AppRouter.getDoctorListRoute(): (context) =>
+            DoctorsList(speciality: "default"),
         AppRouter.getScheduleList(): (context) => Schedule(),
         AppRouter.getForgetPasswordRoute(): (context) => ForgetPassword(),
         AppRouter.getVerificationCodeRoute(): (context) => VerificationCode(),
         AppRouter.getResetPasswordRoute(): (context) => ResetPassword(),
+        AppRouter.getAboutUsRoute(): (context) => AboutUS(),
       },
     );
   }

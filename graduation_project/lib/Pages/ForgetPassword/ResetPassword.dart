@@ -12,6 +12,7 @@ class ResetPassword extends StatelessWidget {
         child: Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
+        whiteBackArrow: false,
         title: Text("Reset Password",
             style: TextStyle(
                 fontSize: 20,

@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/ForgetPassword/ForgetPassword.dart';
 import "../class/AppRouter.dart";
 import 'package:graduation_project/Contants/CustomShapes/CustomLoading/CustomLoading.dart';
 import 'package:graduation_project/Pages/SignUp.dart';
@@ -98,9 +99,28 @@ class _LoginState extends State<Login> {
                               labelStyle: TextStyle(
                                   fontSize: 15.0, color: Colors.white)),
                         ),
-                        const SizedBox(
-                          height: 30.0,
+                        Container(
+                          height: 40,
+                          alignment: Alignment.topRight,
+                          child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ForgetPassword()),
+                                );
+                              },
+                              child: Text(
+                                "Forget Password ?",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold),
+                              )),
                         ),
+                        //const SizedBox(
+                        // height: 30.0,
+                        //),
                         SizedBox(
                           height: 50,
                           width: 150,

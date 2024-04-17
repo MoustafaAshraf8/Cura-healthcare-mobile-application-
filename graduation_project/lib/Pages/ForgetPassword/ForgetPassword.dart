@@ -11,6 +11,7 @@ class ForgetPassword extends StatelessWidget {
       child: Scaffold(
         appBar: TAppBar(
           showBackArrow: true,
+          whiteBackArrow: false,
           title: Text("Forget Password",
               style: TextStyle(
                   fontSize: 20,

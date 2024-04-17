@@ -18,7 +18,8 @@ class Doctor {
 }
 
 class DoctorsList extends StatefulWidget {
-  const DoctorsList({super.key});
+  final String speciality;
+  DoctorsList({super.key, required this.speciality});
 
   @override
   State<DoctorsList> createState() => _DoctorsListState();
