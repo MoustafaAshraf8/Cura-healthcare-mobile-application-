@@ -37,11 +37,7 @@ class AboutUS extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: AssetImage("assets/img/Logo/Cura.png"))),
               ),
-              Divider(
-                color: Colors.white,
-                thickness: 3.0,
-              ),
-              SizedBox(height: 50.0),
+              SizedBox(height: 30.0),
               SizedBox(
                 height: 400,
                 child: Stack(
