@@ -45,3 +45,5 @@ app.*.map.json
 
 /lib/api/Constants.dart
 /lib/api/Interceptor
+/lib/Pages/TestPage.dart
+lib/api/getImageFunction.dart

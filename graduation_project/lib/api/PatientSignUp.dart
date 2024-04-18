@@ -7,10 +7,9 @@ Future<bool> createPatient(
     revertLoading();
     final dio = Dio();
     dio.options.baseUrl = "http://10.0.2.2:8080/api/";
-    dio.options.responseType = ResponseType.plain;
-
-    final cancelToken = CancelToken();
     const url = "patient/signup";
+    dio.options.responseType = ResponseType.plain;
+    final cancelToken = CancelToken();
     Response response = await dio.post(
       url,
       cancelToken: cancelToken,
