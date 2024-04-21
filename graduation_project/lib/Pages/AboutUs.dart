@@ -37,6 +37,7 @@ class AboutUS extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: AssetImage("assets/img/Logo/Cura.png"))),
               ),
+              SizedBox(height: 30.0),
               SizedBox(
                 height: 400,
                 child: Stack(
