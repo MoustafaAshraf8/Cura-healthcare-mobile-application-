@@ -6,7 +6,6 @@ import 'package:graduation_project/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ResetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/VerificationCode.dart';
 import 'package:graduation_project/Pages/MainLayout.dart';
-import 'package:graduation_project/Pages/TestPage.dart';
 import './class/AppRouter.dart';
 import 'package:graduation_project/Pages/DoctorProfile.dart';
 import 'package:graduation_project/Pages/DoctorsList.dart';
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
       //home: Home(),
-      initialRoute: AppRouter.getMainLayoutRouter(),
+      initialRoute: AppRouter.getOnBoardingRoute(),
       // routes: {
       //   "/Onboarding": (context) => OnboardingPage(),
       //   "/SignUp": (context) => SignUp(),
@@ -45,7 +44,6 @@ class MyApp extends StatelessWidget {
       //   "/Schedule": (context) => Schedule(),
       // },
       routes: {
-        "/test": (context) => TestPage(),
         AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
         AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
         AppRouter.getSignUpRoute(): (context) => SignUp(),
