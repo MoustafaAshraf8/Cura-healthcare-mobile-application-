@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/PrimaryHeaderContainer.dart';
+import 'package:graduation_project/Contants/CustomShapes/CustomLoading/CustomLoading.dart';
+import 'package:graduation_project/api/getDoctorScheduleById.dart';
+import 'package:graduation_project/model/DoctorSchedule.dart';
 
 class WeekDays {
   String dayName;
@@ -8,8 +11,42 @@ class WeekDays {
   WeekDays({required this.dayName});
 }
 
-class DoctorProfile extends StatelessWidget {
-  const DoctorProfile({super.key});
+class DoctorProfile extends StatefulWidget {
+  final doctor_id;
+  DoctorProfile({super.key, required this.doctor_id});
+
+  @override
+  State<DoctorProfile> createState() => _DoctorProfileState();
+}
+
+class _DoctorProfileState extends State<DoctorProfile> {
+  // var loading = false;
+
+  // void revertLoading() {
+  //   setState(() {
+  //     loading = !loading;
+  //   });
+  // }
+
+  // late var doctorSchedule;
+
+  // void setDoctorSchedule(DoctorSchedule newDoctorSchedule) {
+  //   doctorSchedule = newDoctorSchedule;
+  // }
+
+  // void loadDoctorSchedule() async {
+  //   await getDoctorScheduleById(
+  //       doctor_id: widget.doctor_id,
+  //       setDoctorSchedule: setDoctorSchedule,
+  //       revertLoading: revertLoading);
+  // }
+
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   loadDoctorSchedule();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -300,6 +337,7 @@ class DoctorProfile extends StatelessWidget {
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         itemCount: week.length,
+                        // itemCount: doctorSchedule.timeSlot.length,
                         itemBuilder: (context, index) {
                           return GestureDetector(
                             child: Container(
@@ -324,6 +362,7 @@ class DoctorProfile extends StatelessWidget {
                                 children: [
                                   Text(
                                     "${index + 8}",
+                                    // "${doctorSchedule.timeSlot[index].Start}",
                                     style: TextStyle(
                                         fontSize: 17,
                                         color: index == 1
@@ -332,6 +371,7 @@ class DoctorProfile extends StatelessWidget {
                                   ),
                                   Text(
                                     week[index].dayName,
+                                    // doctorSchedule.Dayt,
                                     style: TextStyle(
                                         fontSize: 17,
                                         fontWeight: FontWeight.w500,

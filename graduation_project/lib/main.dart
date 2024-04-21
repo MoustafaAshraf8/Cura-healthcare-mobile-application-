@@ -53,9 +53,9 @@ class MyApp extends StatelessWidget {
         AppRouter.getHomeRoute(): (context) => Home(),
         AppRouter.getSpecialityRoute(): (context) => Speciality(),
         AppRouter.getProfileRoute(): (context) => Profile(),
-        AppRouter.getDoctorProfileRoute(): (context) => DoctorProfile(),
-        AppRouter.getDoctorListRoute(): (context) =>
-            DoctorsList(speciality: "default"),
+        // AppRouter.getDoctorProfileRoute(): (context) => DoctorProfile(),
+        // AppRouter.getDoctorListRoute(): (context) =>
+        //     DoctorsList(speciality: "default"),
         AppRouter.getScheduleList(): (context) => Schedule(),
         AppRouter.getForgetPasswordRoute(): (context) => ForgetPassword(),
         AppRouter.getVerificationCodeRoute(): (context) => VerificationCode(),

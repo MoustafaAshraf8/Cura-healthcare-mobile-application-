@@ -146,8 +146,9 @@ class _DoctorsListState extends State<DoctorsList> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        const DoctorProfile(), // 7ot route el page di hna
+                                    builder: (context) => DoctorProfile(
+                                        doctor_id: doctorList[index]
+                                            .doctor_id), // 7ot route el page di hna
                                   ));
                             },
                             child: Container(
