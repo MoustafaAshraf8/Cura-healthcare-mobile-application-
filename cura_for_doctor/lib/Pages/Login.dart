@@ -3,6 +3,7 @@
 import 'package:cura_for_doctor/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:cura_for_doctor/Pages/SignUp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -17,23 +18,25 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color.fromARGB(255, 8, 55, 102),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.all(50.0),
+            padding: EdgeInsets.all(45.sp),
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(
-                    height: 30,
+                  SizedBox(
+                    height: height * 0.05,
                   ),
                   Column(
                     children: [
                       Container(
-                        height: 300,
-                        width: 600,
+                        height: height * 0.3,
+                        width: width * 0.3,
                         child: Image.asset(
                           "assets/img/Logo/Cura.png",
                           fit: BoxFit.cover,
@@ -45,35 +48,35 @@ class _LoginState extends State<Login> {
                     controller: emailTextEditingController,
                     keyboardType: TextInputType.emailAddress,
                     obscureText: false,
-                    style: const TextStyle(fontSize: 15.0),
-                    decoration: const InputDecoration(
-                        icon: Icon(
+                    style: TextStyle(fontSize: 13.sp),
+                    decoration: InputDecoration(
+                        icon: const Icon(
                           Icons.email,
                         ),
                         iconColor: Colors.white,
                         labelText: "Enter Your E-mail",
                         labelStyle:
-                            TextStyle(fontSize: 15.0, color: Colors.white)),
+                            TextStyle(fontSize: 13.sp, color: Colors.white)),
                   ),
-                  const SizedBox(
-                    height: 10.0,
+                  SizedBox(
+                    height: 8.sp,
                   ),
                   TextField(
                     controller: passwordTextEditingController,
                     keyboardType: TextInputType.text,
                     obscureText: true,
-                    style: const TextStyle(fontSize: 15.0),
-                    decoration: const InputDecoration(
-                        icon: Icon(
+                    style: TextStyle(fontSize: 13.sp),
+                    decoration: InputDecoration(
+                        icon: const Icon(
                           Icons.lock,
                         ),
                         iconColor: Colors.white,
                         labelText: "Enter Your Password",
                         labelStyle:
-                            TextStyle(fontSize: 15.0, color: Colors.white)),
+                            TextStyle(fontSize: 13.sp, color: Colors.white)),
                   ),
                   Container(
-                    height: 40,
+                    height: height * 0.05,
                     alignment: Alignment.topRight,
                     child: TextButton(
                         onPressed: () {
@@ -83,43 +86,40 @@ class _LoginState extends State<Login> {
                                 builder: (context) => const ForgetPassword()),
                           );
                         },
-                        child: const Text(
+                        child: Text(
                           "Forget Password ?",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16.0,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.bold),
                         )),
                   ),
-                  //const SizedBox(
-                  // height: 30.0,
-                  //),
                   SizedBox(
-                    height: 50,
-                    width: 150,
+                    height: 42.sp,
+                    width: 140.sp,
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
                           alignment: Alignment.center,
                           backgroundColor:
                               const MaterialStatePropertyAll(Colors.black),
-                          padding: const MaterialStatePropertyAll(
-                              EdgeInsets.all(12.0)),
+                          padding:
+                              MaterialStatePropertyAll(EdgeInsets.all(12.sp)),
                           shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30.0)))),
-                      child: const Text("Login",
+                      child: Text("Login",
                           style:
-                              TextStyle(color: Colors.white, fontSize: 18.0)),
+                              TextStyle(color: Colors.white, fontSize: 16.sp)),
                     ),
                   ),
                   const SizedBox(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                      Text(
                         "Do not have an account ?",
-                        style: TextStyle(color: Colors.white, fontSize: 16.0),
+                        style: TextStyle(color: Colors.white, fontSize: 14.sp),
                       ),
                       TextButton(
                           onPressed: () {
@@ -128,11 +128,11 @@ class _LoginState extends State<Login> {
                               MaterialPageRoute(builder: (context) => SignUp()),
                             );
                           },
-                          child: const Text(
+                          child: Text(
                             "Sign Up",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 16.0,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.bold),
                           ))
                     ],

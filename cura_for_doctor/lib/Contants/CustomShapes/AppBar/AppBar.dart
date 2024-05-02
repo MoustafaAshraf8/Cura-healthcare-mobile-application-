@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TAppBar({
@@ -20,8 +21,10 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: width * 0.015),
       child: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -31,7 +34,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: () => Navigator.pop(context),
                 icon: Icon(
                   Icons.arrow_circle_left_outlined,
-                  size: 27,
+                  size: 24.sp,
                   color: (whiteBackArrow == true || whiteBackArrow == null)
                       ? Colors.white
                       : Colors.black,

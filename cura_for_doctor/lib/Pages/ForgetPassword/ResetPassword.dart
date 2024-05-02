@@ -1,6 +1,7 @@
 import 'package:cura_for_doctor/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:cura_for_doctor/Pages/Login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
@@ -11,68 +12,68 @@ class ResetPassword extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
         child: Scaffold(
-      appBar: const TAppBar(
+      appBar: TAppBar(
         showBackArrow: true,
         whiteBackArrow: false,
         title: Text("Reset Password",
             style: TextStyle(
-                fontSize: 20,
+                fontSize: 17.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.black)),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: EdgeInsets.all(24.sp),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Image(
                   image:
                       AssetImage("assets/img/ForgetPassword/NewPassword.png")),
-              const SizedBox(height: 20.0),
+              SizedBox(height: height * 0.02),
               Container(
-                width: width,
-                child: const Text(
+                width: width * 0.9,
+                child: Text(
                   "Your New Password Must Be Different From Previously Used Password!",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18.0,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
               ),
               SizedBox(height: height * 0.05),
-              const TextField(
+              TextField(
                 keyboardType: TextInputType.text,
                 obscureText: true,
-                style: TextStyle(fontSize: 15.0),
+                style: TextStyle(fontSize: 15.sp),
                 decoration: InputDecoration(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.lock,
                     ),
                     iconColor: Colors.black,
                     labelText: "Enter New Password",
-                    labelStyle: TextStyle(fontSize: 15.0, color: Colors.black)),
+                    labelStyle:
+                        TextStyle(fontSize: 13.sp, color: Colors.black)),
               ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              const TextField(
+              SizedBox(height: height * 0.005),
+              TextField(
                 keyboardType: TextInputType.text,
                 obscureText: true,
-                style: TextStyle(fontSize: 15.0),
+                style: TextStyle(fontSize: 15.sp),
                 decoration: InputDecoration(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.lock,
                     ),
                     iconColor: Colors.black,
                     labelText: "Confirm New Password",
-                    labelStyle: TextStyle(fontSize: 15.0, color: Colors.black)),
+                    labelStyle:
+                        TextStyle(fontSize: 13.sp, color: Colors.black)),
               ),
-              const SizedBox(height: 50.0),
+              SizedBox(height: height * 0.05),
               SizedBox(
-                height: 50,
-                width: 150,
+                height: 42.sp,
+                width: 140.sp,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -84,12 +85,11 @@ class ResetPassword extends StatelessWidget {
                       alignment: Alignment.center,
                       backgroundColor:
                           const MaterialStatePropertyAll(Colors.black),
-                      padding:
-                          const MaterialStatePropertyAll(EdgeInsets.all(12.0)),
+                      padding: MaterialStatePropertyAll(EdgeInsets.all(12.sp)),
                       shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)))),
-                  child: const Text("Save",
-                      style: TextStyle(color: Colors.white, fontSize: 18.0)),
+                  child: Text("Save",
+                      style: TextStyle(color: Colors.white, fontSize: 16.sp)),
                 ),
               ),
             ],

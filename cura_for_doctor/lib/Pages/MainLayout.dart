@@ -1,4 +1,5 @@
-import 'package:cura_for_doctor/Contants/CustomShapes/CustomNavigationBar.dart';
+import 'package:cura_for_doctor/Contants/CustomShapes/NavigationBar/CustomNavigationBar.dart';
+import 'package:cura_for_doctor/Pages/Profile.dart';
 import 'package:flutter/material.dart';
 
 class MainLayout extends StatefulWidget {
@@ -10,7 +11,7 @@ class MainLayout extends StatefulWidget {
 
 class _MainLayoutState extends State<MainLayout> {
   int currentView = 0;
-  Map<int, Widget> widgetMap = {};
+  Map<int, Widget> widgetMap = {4: const Profile()};
 
   void updateView(int index) {
     setState(() {

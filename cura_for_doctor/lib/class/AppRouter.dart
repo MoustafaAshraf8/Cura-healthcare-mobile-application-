@@ -3,16 +3,15 @@ class AppRouter {
   static String _signUp = "/SignUp";
   static String _logIn = "/Login";
   static String _onBoarding = "/Onboarding";
-  static String _speciality = "/Speciality";
   static String _profile = "/Profile";
-  static String _doctorProfile = "/DoctorProfile";
-  static String _doctorList = "/DoctorsList";
-  static String _schedule = "/Schedule";
   static String _forgetPassword = "/ForgetPassword";
   static String _verificationCode = "/VerificationCode";
   static String _resetPassword = "/ResetPassword";
   static String _mainLayout = "/MainLayout";
   static String _aboutus = "/AboutUs";
+  static String _appointments = "/Appointments";
+  static String _calenderview = "/CalenderView";
+  static String _eventEditing = "/EventEding";
 
   constructor() {}
 
@@ -32,24 +31,8 @@ class AppRouter {
     return _onBoarding;
   }
 
-  static String getSpecialityRoute() {
-    return _speciality;
-  }
-
   static String getProfileRoute() {
     return _profile;
-  }
-
-  static String getDoctorProfileRoute() {
-    return _doctorProfile;
-  }
-
-  static String getDoctorListRoute() {
-    return _doctorList;
-  }
-
-  static String getScheduleList() {
-    return _schedule;
   }
 
   static String getForgetPasswordRoute() {
@@ -70,6 +53,18 @@ class AppRouter {
 
   static String getAboutUsRoute() {
     return _aboutus;
+  }
+
+  static String getAppointmentsRoute() {
+    return _appointments;
+  }
+
+  static String getCalenderViewRoute() {
+    return _calenderview;
+  }
+
+  static String getEventEditingRoute() {
+    return _eventEditing;
   }
 }
 
