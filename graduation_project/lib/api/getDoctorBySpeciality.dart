@@ -22,12 +22,6 @@ Future<bool> getDoctorBySpeciality(
     Response response = await dio.request(url);
     if (response.statusCode == 200) {
       var decoded = json.decode(response.data.toString());
-      print("5555555555555555555555");
-      // print(decoded[0]);
-      // var result = decoded.forEach((e) => {
-      //   addToDoctorList(e);
-      //   return e;
-      // });
       for (int i = 0; i < decoded.length; i++) {
         addToDoctorList(Doctor.fromJson(decoded[i]));
       }
@@ -38,7 +32,7 @@ Future<bool> getDoctorBySpeciality(
       revertLoading();
       // If the server did not return a 201 CREATED response,
       // then throw an exception.
-      throw Exception('Failed to sign in');
+      throw Exception('Failed to load doctor list for this speciality');
     }
   } catch (e) {
     print(e);

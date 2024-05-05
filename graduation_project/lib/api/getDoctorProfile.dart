@@ -1,32 +1,26 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:graduation_project/model/DoctorSchedule.dart';
-import 'package:graduation_project/model/TimeSlot.dart';
+import 'package:graduation_project/model/DoctorProfile.dart';
 
-Future<bool> getDoctorScheduleById(
+Future<bool> getDoctorProfile(
     {required int doctor_id,
-    required Function setDoctorScheduleList,
+    required Function setDoctorProfile,
     required Function revertLoading}) async {
   final dio = Dio();
   dio.options.method = "GET";
   dio.options.baseUrl = "http://10.0.2.2:8080/api/";
   dio.options.responseType = ResponseType.plain;
   final cancelToken = CancelToken();
-  var url = "doctor/schedule/${doctor_id}";
+  var url = "doctor/profile/${doctor_id}";
   try {
     revertLoading();
     Response response = await dio.request(url);
     if (response.statusCode == 200) {
       var decoded = json.decode(response.data.toString());
 
-      var scheduleList = decoded as List;
-
-      List<DoctorSchedule> doctorSchedule = scheduleList.map((schedule) {
-        return DoctorSchedule.fromJson(schedule);
-      }).toList();
-
-      setDoctorScheduleList(newDoctorScheduleList: doctorSchedule);
+      DoctorProfile doctorProfile = DoctorProfile.fromJson(decoded);
+      setDoctorProfile(doctorProfile: doctorProfile);
       revertLoading();
       return true;
     } else {
