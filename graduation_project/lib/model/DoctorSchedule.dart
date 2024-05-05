@@ -3,35 +3,33 @@ import 'package:graduation_project/model/TimeSlot.dart';
 class DoctorSchedule {
   final int schedule_id;
   final String Day;
+  final String Date;
   final List<TimeSlot> timeSlot;
 
   const DoctorSchedule(
-      {required this.schedule_id, required this.Day, required this.timeSlot});
+      {required this.schedule_id,
+      required this.Day,
+      required this.Date,
+      required this.timeSlot});
 
   factory DoctorSchedule.fromJson(Map<String, dynamic> json) {
-    // print(json['Day']);
-    // return switch (json) {
-    //   {
-    //     "schedule_id": int schedule_id,
-    //     "Day": String Day,
-    //     "timeSlot": TimeSlot timeSlot
-    //   } =>
-    //     DoctorSchedule(
-    //       schedule_id: schedule_id,
-    //       Day: Day,
-    //       t
-    //     ),
-    //   _ => throw const FormatException('Failed to load Doctor.'),
-    // };
     try {
+      var timeSlotList = json["timeslot"] as List;
       return DoctorSchedule(
           schedule_id: json['schedule_id'],
           Day: json['Day'],
-          // timeSlot: TimeSlot.fromJson(json['timeslot'])
-          timeSlot: json['timeslot'].map((e) => TimeSlot.fromJson(e)));
+          Date: json['Date'],
+          timeSlot:
+              timeSlotList.map((slot) => TimeSlot.fromJson(slot)).toList());
     } catch (e) {
+      print(e);
       throw const FormatException('Failed to load Schedule.');
     }
+  }
+
+  @override
+  String toString() {
+    return "DoctorSchedule:{schedule_id: ${schedule_id}, Day: ${Day}, Date: ${Date}, timeslot: ${timeSlot.toString()}}";
   }
 
   // Map<String, dynamic> toJson() {
