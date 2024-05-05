@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:graduation_project/model/DoctorSchedule.dart';
-import 'package:graduation_project/model/TimeSlot.dart';
 
 Future<bool> getDoctorScheduleById(
     {required int doctor_id,

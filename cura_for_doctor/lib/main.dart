@@ -10,6 +10,7 @@ import 'package:cura_for_doctor/Pages/Onboarding/onboarding.dart';
 import 'package:cura_for_doctor/Pages/SignUp.dart';
 import 'package:cura_for_doctor/class/AppRouter.dart';
 import 'package:flutter/material.dart';
+import 'Pages/TestScheduleCreate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
       //home: Home(),
-      initialRoute: AppRouter.getOnBoardingRoute(),
+      initialRoute: "/testScheduleCreate",
       // routes: {
       //   "/Onboarding": (context) => OnboardingPage(),
       //   "/SignUp": (context) => SignUp(),
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
       //   "/Schedule": (context) => Schedule(),
       // },
       routes: {
+        "/testScheduleCreate": (context) => TestScheduleCreate(),
         AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
         AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
         AppRouter.getSignUpRoute(): (context) => SignUp(),
