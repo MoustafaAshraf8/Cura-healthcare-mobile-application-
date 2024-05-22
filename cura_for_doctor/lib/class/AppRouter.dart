@@ -12,6 +12,7 @@ class AppRouter {
   static String _appointments = "/Appointments";
   static String _calenderview = "/CalenderView";
   static String _eventEditing = "/EventEding";
+  static String _eventViewing = "/EventViewing";
 
   constructor() {}
 
@@ -65,6 +66,10 @@ class AppRouter {
 
   static String getEventEditingRoute() {
     return _eventEditing;
+  }
+
+  static String getEventViewingRoute() {
+    return _eventViewing;
   }
 }
 

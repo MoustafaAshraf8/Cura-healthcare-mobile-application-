@@ -1,8 +1,10 @@
 import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/Event.dart';
+import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/EventProvider.dart';
 import 'package:cura_for_doctor/Pages/CalenderSchedule/Utils/Utils.dart';
 import 'package:cura_for_doctor/class/AppTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class EventEditing extends StatefulWidget {
   const EventEditing({super.key, this.event});
@@ -23,7 +25,7 @@ class _EventEditingState extends State<EventEditing> {
           style: ElevatedButton.styleFrom(
               backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent),
-          onPressed: () {},
+          onPressed: SaveForm,
           icon: const Icon(Icons.done),
           label: const Text("SAVE"),
         ),
@@ -71,7 +73,7 @@ class _EventEditingState extends State<EventEditing> {
                   border: UnderlineInputBorder(),
                   hintText: "Add Title",
                 ),
-                onFieldSubmitted: (_) {},
+                onFieldSubmitted: (_) => SaveForm,
                 validator: (title) => title != null && title.isEmpty
                     ? "Title cannot be empty"
                     : null,
@@ -135,22 +137,26 @@ class _EventEditingState extends State<EventEditing> {
 
   Future pickFromDateTime(
       {required bool pickDate, required bool pickFromDate}) async {
-    final date = await pickDateTime(fromDate, pickDate: pickDate);
+    final date = await pickDateTime(fromDate,
+        pickDate: pickDate, firstDate: pickDate ? fromDate : null);
 
     if (date == null) return;
     setState(() {
       fromDate = date;
-      //toDate = date;
+      toDate =
+          DateTime(date.year, date.month, date.day, toDate.hour, toDate.minute);
     });
   }
 
   Future pickToDateTime(
       {required bool pickDate, required bool pickToDate}) async {
-    final date = await pickDateTime(toDate, pickDate: pickDate);
+    final date = await pickDateTime(toDate,
+        pickDate: pickDate, firstDate: pickDate ? fromDate : null);
 
     if (date == null) return;
     setState(() {
-      //fromDate = date;
+      fromDate = DateTime(
+          date.year, date.month, date.day, fromDate.hour, fromDate.minute);
       toDate = date;
     });
   }
@@ -215,4 +221,22 @@ class _EventEditingState extends State<EventEditing> {
           child,
         ],
       );
+
+  Future SaveForm() async {
+    final isValid = _formKey.currentState!.validate();
+
+    if (isValid) {
+      final event = Event(
+          title: titleController.text,
+          from: fromDate,
+          to: toDate,
+          description: "Description",
+          isAllDay: false);
+
+      final provider = Provider.of<EventProvider>(context, listen: false);
+      provider.addEvent(event);
+
+      Navigator.of(context).pop();
+    }
+  }
 }

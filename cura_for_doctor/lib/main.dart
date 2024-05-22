@@ -2,7 +2,10 @@
 import 'package:cura_for_doctor/Pages/AboutUs.dart';
 import 'package:cura_for_doctor/Pages/Appointments.dart';
 import 'package:cura_for_doctor/Pages/CalenderSchedule/CalenderView.dart';
+import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/Event.dart';
+import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/EventProvider.dart';
 import 'package:cura_for_doctor/Pages/CalenderSchedule/EventEditing.dart';
+import 'package:cura_for_doctor/Pages/CalenderSchedule/EventViewing.dart';
 import 'package:cura_for_doctor/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:cura_for_doctor/Pages/ForgetPassword/ResetPassword.dart';
 import 'package:cura_for_doctor/Pages/ForgetPassword/VerificationCode.dart';
@@ -15,6 +18,7 @@ import 'package:cura_for_doctor/class/AppRouter.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(DevicePreview(builder: (context) => MyApp()));
@@ -30,39 +34,43 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          builder: DevicePreview.appBuilder,
-          //Line El Theme da 3shan nl3'y ay t3del b3d el flutter upgrade
-          theme: ThemeData(useMaterial3: false),
-          debugShowCheckedModeBanner: false,
-          //home: Home(),
-          initialRoute: AppRouter.getEventEditingRoute(),
-          // routes: {
-          //   "/Onboarding": (context) => OnboardingPage(),
-          //   "/SignUp": (context) => SignUp(),
-          //   "/Login": (context) => Login(),
-          //   "/Home": (context) => Home(),
-          //   "/Speciality": (context) => Speciality(),
-          //   "/Profile": (context) => Profile(),
-          //   "/DoctorProfile": (context) => DoctorProfile(),
-          //   "/DoctorsList": (context) => DoctorsList(),
-          //   "/Schedule": (context) => Schedule(),
-          // },
-          routes: {
-            AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
-            AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
-            AppRouter.getSignUpRoute(): (context) => SignUp(),
-            AppRouter.getLoginRoute(): (context) => Login(),
-            AppRouter.getForgetPasswordRoute(): (context) => ForgetPassword(),
-            AppRouter.getVerificationCodeRoute(): (context) =>
-                VerificationCode(),
-            AppRouter.getResetPasswordRoute(): (context) => ResetPassword(),
-            AppRouter.getAboutUsRoute(): (context) => AboutUS(),
-            AppRouter.getAppointmentsRoute(): (context) => Appointments(),
-            AppRouter.getProfileRoute(): (context) => Profile(),
-            AppRouter.getCalenderViewRoute(): (context) => CalenderView(),
-            AppRouter.getEventEditingRoute(): (context) => EventEditing(),
-          },
+        return ChangeNotifierProvider(
+          create: (context) => EventProvider(),
+          child: MaterialApp(
+            builder: DevicePreview.appBuilder,
+            //Line El Theme da 3shan nl3'y ay t3del b3d el flutter upgrade
+            theme: ThemeData(useMaterial3: false),
+            debugShowCheckedModeBanner: false,
+            //home: Home(),
+            initialRoute: AppRouter.getCalenderViewRoute(),
+            // routes: {
+            //   "/Onboarding": (context) => OnboardingPage(),
+            //   "/SignUp": (context) => SignUp(),
+            //   "/Login": (context) => Login(),
+            //   "/Home": (context) => Home(),
+            //   "/Speciality": (context) => Speciality(),
+            //   "/Profile": (context) => Profile(),
+            //   "/DoctorProfile": (context) => DoctorProfile(),
+            //   "/DoctorsList": (context) => DoctorsList(),
+            //   "/Schedule": (context) => Schedule(),
+            // },
+            routes: {
+              AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
+              AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
+              AppRouter.getSignUpRoute(): (context) => SignUp(),
+              AppRouter.getLoginRoute(): (context) => Login(),
+              AppRouter.getForgetPasswordRoute(): (context) => ForgetPassword(),
+              AppRouter.getVerificationCodeRoute(): (context) =>
+                  VerificationCode(),
+              AppRouter.getResetPasswordRoute(): (context) => ResetPassword(),
+              AppRouter.getAboutUsRoute(): (context) => AboutUS(),
+              AppRouter.getAppointmentsRoute(): (context) => Appointments(),
+              AppRouter.getProfileRoute(): (context) => Profile(),
+              AppRouter.getCalenderViewRoute(): (context) => CalenderView(),
+              AppRouter.getEventEditingRoute(): (context) => EventEditing(),
+              //AppRouter.getEventViewingRoute(): (context) => EventViewing(event: Event),
+            },
+          ),
         );
       },
     );
