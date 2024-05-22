@@ -40,7 +40,7 @@ class AppRouter {
     return _profile;
   }
 
-  static String getDoctorProfileRoute() {
+  static String getDoctorProfilePageRoute() {
     return _doctorProfile;
   }
 

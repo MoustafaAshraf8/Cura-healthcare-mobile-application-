@@ -5,7 +5,7 @@ import 'package:graduation_project/model/DoctorSchedule.dart';
 
 Future<bool> getDoctorScheduleById(
     {required int doctor_id,
-    required Function setDoctorSchedule,
+    required Function setDoctorScheduleList,
     required Function revertLoading}) async {
   final dio = Dio();
   dio.options.method = "GET";
@@ -18,18 +18,19 @@ Future<bool> getDoctorScheduleById(
     Response response = await dio.request(url);
     if (response.statusCode == 200) {
       var decoded = json.decode(response.data.toString());
-      print("5555555555555555555555");
-      // print(decoded[0]);
-      // var result = decoded.forEach((e) => {
-      //   addToDoctorList(e);
-      //   return e;
-      // });
-      var doctorSchedule = DoctorSchedule.fromJson(decoded);
 
+      var scheduleList = decoded as List;
+
+      List<DoctorSchedule> doctorSchedule = scheduleList.map((schedule) {
+        return DoctorSchedule.fromJson(schedule);
+      }).toList();
+
+      setDoctorScheduleList(newDoctorScheduleList: doctorSchedule);
       revertLoading();
       return true;
     } else {
-      revertLoading();
+      cancelToken.cancel();
+      // revertLoading();
       // If the server did not return a 201 CREATED response,
       // then throw an exception.
       throw Exception('Failed to sign in');
@@ -37,6 +38,7 @@ Future<bool> getDoctorScheduleById(
   } catch (e) {
     print(e);
     cancelToken.cancel();
-    throw e;
+    // throw e;
+    return false;
   }
 }

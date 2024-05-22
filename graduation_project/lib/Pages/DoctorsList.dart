@@ -3,7 +3,7 @@ import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/SecondaryHeaderContainer.dart';
 import 'package:graduation_project/Contants/CustomShapes/CustomLoading/CustomLoading.dart';
 import 'package:graduation_project/Contants/CustomShapes/SearchBar/Searchbar.dart';
-import 'package:graduation_project/Pages/DoctorProfile.dart';
+import 'package:graduation_project/Pages/DoctorProfilePage/DoctorProfilePage.dart';
 import 'package:graduation_project/api/getDoctorBySpeciality.dart';
 import '../model/Doctor.dart';
 
@@ -146,7 +146,7 @@ class _DoctorsListState extends State<DoctorsList> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DoctorProfile(
+                                    builder: (context) => DoctorProfilePage(
                                         doctor_id: doctorList[index]
                                             .doctor_id), // 7ot route el page di hna
                                   ));

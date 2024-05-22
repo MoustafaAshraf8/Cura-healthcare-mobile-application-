@@ -1,42 +1,39 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:graduation_project/model/Doctor.dart';
+import 'package:graduation_project/model/DoctorProfile.dart';
 
-Future<bool> getDoctorBySpeciality(
-    {required String speciality,
-    required Function addToDoctorList,
+Future<bool> getDoctorProfile(
+    {required int doctor_id,
+    required Function setDoctorProfile,
     required Function revertLoading}) async {
   final dio = Dio();
   dio.options.method = "GET";
   dio.options.baseUrl = "http://10.0.2.2:8080/api/";
   dio.options.responseType = ResponseType.plain;
   final cancelToken = CancelToken();
-  const url = "doctor";
-  dio.options.queryParameters = {"speciality": speciality};
+  var url = "doctor/profile/${doctor_id}";
   try {
     revertLoading();
-
-    // Response response =
-    //     await dio.post(url, cancelToken: cancelToken, data: user.toJson());
     Response response = await dio.request(url);
     if (response.statusCode == 200) {
       var decoded = json.decode(response.data.toString());
-      for (int i = 0; i < decoded.length; i++) {
-        addToDoctorList(Doctor.fromJson(decoded[i]));
-      }
 
+      DoctorProfile doctorProfile = DoctorProfile.fromJson(decoded);
+      setDoctorProfile(doctorProfile: doctorProfile);
       revertLoading();
       return true;
     } else {
-      revertLoading();
+      cancelToken.cancel();
+      // revertLoading();
       // If the server did not return a 201 CREATED response,
       // then throw an exception.
-      throw Exception('Failed to load doctor list for this speciality');
+      throw Exception('Failed to sign in');
     }
   } catch (e) {
     print(e);
     cancelToken.cancel();
-    throw e;
+    // throw e;
+    return false;
   }
 }

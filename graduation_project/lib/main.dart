@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/AboutUs.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ForgetPassword.dart';
@@ -7,8 +5,6 @@ import 'package:graduation_project/Pages/ForgetPassword/ResetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/VerificationCode.dart';
 import 'package:graduation_project/Pages/MainLayout.dart';
 import './class/AppRouter.dart';
-import 'package:graduation_project/Pages/DoctorProfile.dart';
-import 'package:graduation_project/Pages/DoctorsList.dart';
 import 'package:graduation_project/Pages/Home.dart';
 import 'package:graduation_project/Pages/Login.dart';
 import 'package:graduation_project/Pages/Onboarding/onboarding.dart';
@@ -27,22 +23,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //Line El Theme da 3shan nl3'y ay t3del b3d el flutter upgrade
       theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
-      //home: Home(),
-      initialRoute: AppRouter.getOnBoardingRoute(),
-      // routes: {
-      //   "/Onboarding": (context) => OnboardingPage(),
-      //   "/SignUp": (context) => SignUp(),
-      //   "/Login": (context) => Login(),
-      //   "/Home": (context) => Home(),
-      //   "/Speciality": (context) => Speciality(),
-      //   "/Profile": (context) => Profile(),
-      //   "/DoctorProfile": (context) => DoctorProfile(),
-      //   "/DoctorsList": (context) => DoctorsList(),
-      //   "/Schedule": (context) => Schedule(),
-      // },
+      initialRoute: AppRouter.getMainLayoutRouter(),
       routes: {
         AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
         AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
@@ -51,9 +34,6 @@ class MyApp extends StatelessWidget {
         AppRouter.getHomeRoute(): (context) => Home(),
         AppRouter.getSpecialityRoute(): (context) => Speciality(),
         AppRouter.getProfileRoute(): (context) => Profile(),
-        // AppRouter.getDoctorProfileRoute(): (context) => DoctorProfile(),
-        // AppRouter.getDoctorListRoute(): (context) =>
-        //     DoctorsList(speciality: "default"),
         AppRouter.getScheduleList(): (context) => Schedule(),
         AppRouter.getForgetPasswordRoute(): (context) => ForgetPassword(),
         AppRouter.getVerificationCodeRoute(): (context) => VerificationCode(),
