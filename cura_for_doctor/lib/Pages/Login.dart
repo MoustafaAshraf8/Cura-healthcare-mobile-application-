@@ -1,7 +1,13 @@
 // ignore_for_file: file_names
 
+import 'dart:math';
+
 import 'package:cura_for_doctor/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:cura_for_doctor/Pages/SignUp.dart';
+import 'package:cura_for_doctor/api/DoctorSignIn.dart';
+import 'package:cura_for_doctor/class/AppRouter.dart';
+import 'package:cura_for_doctor/model/Doctor.dart';
+import 'package:cura_for_doctor/model/User.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,6 +21,28 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
+
+  var loading = false;
+  var changeRoute = false;
+  void changeRouteFunction() {
+    Navigator.of(context).pushReplacementNamed(AppRouter.getHomeRoute());
+  }
+
+  void revertLoading() {
+    setState(() {
+      loading = !loading;
+    });
+  }
+
+  void logInRequest() async {
+    User user = User(
+        Email: emailTextEditingController.value.text,
+        Password: passwordTextEditingController.value.text);
+    changeRoute = await signIn(user: user, revertLoading: revertLoading);
+    if (changeRoute) {
+      changeRouteFunction();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +126,7 @@ class _LoginState extends State<Login> {
                     height: 42.sp,
                     width: 140.sp,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: logInRequest,
                       style: ButtonStyle(
                           alignment: Alignment.center,
                           backgroundColor:

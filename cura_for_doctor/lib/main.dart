@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(useMaterial3: false),
             debugShowCheckedModeBanner: false,
             //home: Home(),
-            initialRoute: AppRouter.getCalenderViewRoute(),
+            initialRoute: AppRouter.getLoginRoute(),
             // routes: {
             //   "/Onboarding": (context) => OnboardingPage(),
             //   "/SignUp": (context) => SignUp(),
@@ -69,6 +69,7 @@ class MyApp extends StatelessWidget {
               AppRouter.getProfileRoute(): (context) => Profile(),
               AppRouter.getCalenderViewRoute(): (context) => CalenderView(),
               AppRouter.getEventEditingRoute(): (context) => EventEditing(),
+              //AppRouter.getHomeRoute():(context)=>Home()
               //AppRouter.getEventViewingRoute(): (context) => EventViewing(event: Event),
             },
           ),
