@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/SecondaryHeaderContainer.dart';
 import 'package:graduation_project/Contants/CustomShapes/CustomLoading/CustomLoading.dart';
-import 'package:graduation_project/Contants/CustomShapes/SearchBar/Searchbar.dart';
+import 'package:graduation_project/Contants/CustomShapes/CustomSearchBar/CustomSearchBar.dart';
 import 'package:graduation_project/Pages/DoctorProfilePage/DoctorProfilePage.dart';
 import 'package:graduation_project/api/getDoctorBySpeciality.dart';
 import '../model/Doctor.dart';
@@ -89,7 +89,7 @@ class _DoctorsListState extends State<DoctorsList> {
               child: Column(
                 children: [
                   ///Header --Page Header-- (Blue Part) Using "Secondary Header Countainer"
-                  const SecondaryHeaderContainer(
+                  SecondaryHeaderContainer(
                       child: Column(
                     children: [
                       //Header AppBar
@@ -117,7 +117,7 @@ class _DoctorsListState extends State<DoctorsList> {
                         height: 16.0,
                       ),
                       //SearchBar
-                      Searchbar(),
+                      CustomSearchBar(revertSearch: () {})
                     ],
                   )),
 

@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/PrimaryHeaderContainer.dart';
+import 'package:graduation_project/Contants/CustomShapes/CustomSearchBar/CustomSearchBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/ImagesSlider/BannerSlider.dart';
-import 'package:graduation_project/Contants/CustomShapes/SearchBar/SearchBar.dart';
+import 'package:graduation_project/model/Patient.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 //Category class to be added to the slider(Listview.builder)
 class Category {
@@ -21,6 +25,35 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool patientInitialized = false;
+  late Patient patient;
+  Future<Patient> readPatientData() async {
+    final prefs = await SharedPreferences.getInstance();
+    var patientDataString = await prefs.getString('patient');
+    var decoded = json.decode((patientDataString as String));
+    patient = Patient.fromJson(decoded);
+    return patient;
+  }
+
+  var search = true;
+
+  void revertSearch() {
+    setState(() {
+      search = !search;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readPatientData().then((patientObject) {
+      setState(() {
+        patient = patientObject;
+        patientInitialized = true;
+      });
+    });
+  }
+
 //The List "items" of type Category to be added to the Listview.builder --
   List<Category> items = [
     Category(
@@ -59,7 +92,7 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   height: 5,
                 ),
-                const TAppBar(
+                TAppBar(
                   title: Column(
                     //crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -68,7 +101,10 @@ class _HomeState extends State<Home> {
                               fontSize: 18,
                               fontStyle: FontStyle.italic,
                               color: Colors.white)),
-                      Text("Adham Mohamed",
+                      Text(
+                          (!patientInitialized)
+                              ? "Adham Mohamed"
+                              : "${patient.FirstName} ${patient.LastName}",
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -87,7 +123,7 @@ class _HomeState extends State<Home> {
                   height: 32.0,
                 ),
                 //SearchBar
-                const Searchbar(),
+                CustomSearchBar(revertSearch: revertSearch),
                 const SizedBox(
                   height: 32.0,
                 ),

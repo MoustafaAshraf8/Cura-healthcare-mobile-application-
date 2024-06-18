@@ -32,7 +32,7 @@ class _SignUpState extends State<SignUp> {
   var loading = false;
   var changeRoute = false;
   void changeRouteFunction() {
-    Navigator.of(context).pushReplacementNamed(AppRouter.getHomeRoute());
+    Navigator.of(context).pushReplacementNamed(AppRouter.getMainLayoutRouter());
   }
 
   void revertLoading() {
@@ -47,7 +47,8 @@ class _SignUpState extends State<SignUp> {
         LastName: lastNameTextEditingController.value.text,
         Email: emailTextEditingController.value.text,
         Password: passwordTextEditingController.value.text,
-        PhoneNumber: int.parse(phoneNumberTextEditingController.value.text));
+        PhoneNumber: int.parse(phoneNumberTextEditingController.value.text),
+        accessToken: null);
     changeRoute =
         await createPatient(patient: patient, revertLoading: revertLoading);
     if (changeRoute) {

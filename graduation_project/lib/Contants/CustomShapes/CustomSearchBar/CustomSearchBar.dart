@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Searchbar extends StatelessWidget {
-  const Searchbar({
-    super.key,
-  });
+class CustomSearchBar extends StatelessWidget {
+  final Function revertSearch;
+  CustomSearchBar({super.key, required this.revertSearch});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => revertSearch(),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Container(

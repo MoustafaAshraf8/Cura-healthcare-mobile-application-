@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
-import '../model/User.dart';
+import 'package:graduation_project/model/Patient.dart';
+import 'package:graduation_project/model/User.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<bool> signIn(
     {required User user, required Function revertLoading}) async {
@@ -18,6 +22,12 @@ Future<bool> signIn(
     if (response.statusCode == 200) {
       revertLoading();
       print(response);
+      var decoded = json.decode(response.data.toString());
+      var patient = Patient.fromJson(decoded);
+      print(patient.toJson());
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString("patient", response.data.toString());
       return true;
     } else {
       revertLoading();
