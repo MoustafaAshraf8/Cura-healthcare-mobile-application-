@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/CustomNavigationBar.dart';
+import 'package:graduation_project/Pages/EMRPage/EMRPage.dart';
 import 'package:graduation_project/Pages/Profile.dart';
 import 'package:graduation_project/Pages/Schedule.dart';
 
@@ -28,7 +29,12 @@ class _MainLayoutState extends State<MainLayout> {
     });
   }
 
-  Map<int, Widget> widgetMap = {0: Home(), 1: Schedule(), 4: Profile()};
+  Map<int, Widget> widgetMap = {
+    0: Home(),
+    1: Schedule(),
+    3: EMRPage(),
+    4: Profile()
+  };
 
   @override
   Widget build(BuildContext context) {
