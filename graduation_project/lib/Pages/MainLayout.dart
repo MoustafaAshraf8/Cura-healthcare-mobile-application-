@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/CustomNavigationBar.dart';
-import 'package:graduation_project/Pages/Profile.dart';
+import 'package:graduation_project/Pages/Profile/Profile.dart';
 import 'package:graduation_project/Pages/Schedule.dart';
 
 import 'Home.dart';
