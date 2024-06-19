@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/EMRPage/getCustomFileModalBottomSheet.dart';
 import 'package:graduation_project/model/ChronicIllness.dart';
 import 'package:intl/intl.dart';
 
@@ -174,7 +175,8 @@ class ChronicIllnessCard extends StatelessWidget {
                         //   ),
                         // ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () => getCustomFileModalBottomSheet(
+                              context, chronicIllness.file),
                           child: Container(
                             margin: EdgeInsets.only(bottom: 10),
                             width: 150,

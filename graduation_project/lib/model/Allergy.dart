@@ -8,7 +8,7 @@ class Allergy {
   final String severity;
   final DateTime diagnosisDate;
   final String? notes;
-  final List<File> files;
+  final List<File> file;
   Allergy(
       {required this.id,
       required this.allergen,
@@ -16,7 +16,7 @@ class Allergy {
       required this.severity,
       required this.diagnosisDate,
       this.notes,
-      required this.files});
+      required this.file});
 
   factory Allergy.fromJson(Map<String, dynamic> json) {
     try {
@@ -32,7 +32,7 @@ class Allergy {
           severity: json["severity"],
           diagnosisDate: DateTime.parse(json["diagnosisDate"]),
           notes: (json.containsKey('notes')) ? json["notes"] : null,
-          files: files);
+          file: files);
     } catch (e) {
       print(e);
       throw const FormatException('Failed to load Allergy.');

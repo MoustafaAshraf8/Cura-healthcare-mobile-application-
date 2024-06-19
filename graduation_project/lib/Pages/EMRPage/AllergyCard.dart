@@ -203,7 +203,7 @@ class AllergyCard extends StatelessWidget {
                         // ),
                         InkWell(
                           onTap: () => getCustomFileModalBottomSheet(
-                              context, allergy.files),
+                              context, allergy.file),
                           child: Container(
                             margin: EdgeInsets.only(bottom: 10),
                             width: 150,
