@@ -14,6 +14,13 @@ class AppRouter {
   static String _mainLayout = "/MainLayout";
   static String _aboutus = "/AboutUs";
 
+  static String _myAccount = "/MyAccount";
+  static String _editmyAccount = "/EditMyAccount";
+  static String _notifications = "/Notifications";
+  static String _settings = "/Settings";
+  static String _helpCenterEmail = "/HelpCenterEmail";
+  static String _policyandagreements = "/Policy";
+
   constructor() {}
 
   static String getHomeRoute() {
@@ -70,6 +77,30 @@ class AppRouter {
 
   static String getAboutUsRoute() {
     return _aboutus;
+  }
+
+  static String getMyAccountRoute() {
+    return _myAccount;
+  }
+
+  static String getEditMyAccountRoute() {
+    return _editmyAccount;
+  }
+
+  static String getNotificationsRoute() {
+    return _notifications;
+  }
+
+  static String getSettingsRoute() {
+    return _settings;
+  }
+
+  static String getHelpCenterEmailRoute() {
+    return _helpCenterEmail;
+  }
+
+  static String getPolicyAndAgreementsRoute() {
+    return _policyandagreements;
   }
 }
 

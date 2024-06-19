@@ -14,6 +14,8 @@ class AppRouter {
   static String _eventEditing = "/EventEding";
   static String _eventViewing = "/EventViewing";
 
+  static String _uploaddata = "/UploadData";
+
   constructor() {}
 
   static String getHomeRoute() {
@@ -70,6 +72,10 @@ class AppRouter {
 
   static String getEventViewingRoute() {
     return _eventViewing;
+  }
+
+  static String getUploadDataRoute() {
+    return _uploaddata;
   }
 }
 
