@@ -14,6 +14,7 @@ import 'package:cura_for_doctor/Pages/MainLayout.dart';
 import 'package:cura_for_doctor/Pages/Onboarding/onboarding.dart';
 import 'package:cura_for_doctor/Pages/Profile.dart';
 import 'package:cura_for_doctor/Pages/SignUp.dart';
+import 'package:cura_for_doctor/Pages/UploadData.dart';
 import 'package:cura_for_doctor/class/AppRouter.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(useMaterial3: false),
             debugShowCheckedModeBanner: false,
             //home: Home(),
-            initialRoute: AppRouter.getCalenderViewRoute(),
+            initialRoute: AppRouter.getUploadDataRoute(),
             // routes: {
             //   "/Onboarding": (context) => OnboardingPage(),
             //   "/SignUp": (context) => SignUp(),
@@ -70,6 +71,8 @@ class MyApp extends StatelessWidget {
               AppRouter.getCalenderViewRoute(): (context) => CalenderView(),
               AppRouter.getEventEditingRoute(): (context) => EventEditing(),
               //AppRouter.getEventViewingRoute(): (context) => EventViewing(event: Event),
+
+              AppRouter.getUploadDataRoute(): (context) => UploadAndTakeData(),
             },
           ),
         );
