@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/EMRPage/getCustomFileModalBottomSheet.dart';
 import 'package:graduation_project/model/Allergy.dart';
 import 'package:intl/intl.dart';
 
@@ -201,7 +202,8 @@ class AllergyCard extends StatelessWidget {
                         //   ),
                         // ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () => getCustomFileModalBottomSheet(
+                              context, allergy.files),
                           child: Container(
                             margin: EdgeInsets.only(bottom: 10),
                             width: 150,

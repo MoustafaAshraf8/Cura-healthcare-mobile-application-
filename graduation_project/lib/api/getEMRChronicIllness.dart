@@ -36,6 +36,6 @@ Future<List<ChronicIllness>> getEMRChronicIllness() async {
     }
   } catch (e) {
     print(e);
-    throw e;
+    return Future.error(e);
   }
 }

@@ -46,6 +46,6 @@ Future<List<Allergy>> getEMRAllergy() async {
     }
   } catch (e) {
     print(e);
-    throw e;
+    return Future.error(e);
   }
 }

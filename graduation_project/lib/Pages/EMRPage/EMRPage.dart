@@ -17,14 +17,12 @@ class EMRPage extends StatefulWidget {
 
 class _EMRPageState extends State<EMRPage> {
   int _buttonIndex = 0;
-
-  final List<ScheduleCard> _canceledScheduleWidgets = [
-    const ScheduleCard(
-        'Dr. Name', 'Speciality', 'Canceled', 'assets/img/Logo/Cura.png'),
-    const ScheduleCard(
-        'Dr. Name', 'Speciality', 'Canceled', 'assets/img/Logo/Cura.png'),
-    const ScheduleCard(
-        'Dr. Name', 'Speciality', 'Canceled', 'assets/img/Logo/Cura.png')
+  List<String> ids = [
+    "aaaaaaaaaaaaaaaaaaa",
+    "aaaaaaaaaaaaaaaaaaa",
+    "aaaaaaaaaaaaaaaaaaa",
+    "aaaaaaaaaaaaaaaaaaa",
+    "aaaaaaaaaaaaaaaaaaa",
   ];
 
   Map<int, Widget> widgetMap = {
