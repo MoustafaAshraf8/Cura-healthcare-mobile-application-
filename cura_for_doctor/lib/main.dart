@@ -70,6 +70,7 @@ class MyApp extends StatelessWidget {
               AppRouter.getProfileRoute(): (context) => Profile(),
               AppRouter.getCalenderViewRoute(): (context) => CalenderView(),
               AppRouter.getEventEditingRoute(): (context) => EventEditing(),
+              //AppRouter.getHomeRoute():(context)=>Home()
               //AppRouter.getEventViewingRoute(): (context) => EventViewing(event: Event),
 
               AppRouter.getUploadDataRoute(): (context) => UploadAndTakeData(),

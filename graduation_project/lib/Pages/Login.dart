@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
   var loading = false;
   var changeRoute = false;
   void changeRouteFunction() {
-    Navigator.of(context).pushReplacementNamed(AppRouter.getHomeRoute());
+    Navigator.of(context).pushReplacementNamed(AppRouter.getMainLayoutRouter());
   }
 
   void revertLoading() {

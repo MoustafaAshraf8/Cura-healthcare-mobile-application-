@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/model/DoctorSchedule.dart';
-import './WeekDays.dart';
 
 class DateScrollView extends StatelessWidget {
   final List<DoctorSchedule> doctorScheduleList;
@@ -12,7 +11,7 @@ class DateScrollView extends StatelessWidget {
       required this.activeDay,
       required this.updateActiveDay});
 
-  Map<String, String> dayConverter = {
+  final Map<String, String> dayConverter = {
     "Saturday": "Sat",
     "saturday": "Sat",
     "Sunday": "Sun",

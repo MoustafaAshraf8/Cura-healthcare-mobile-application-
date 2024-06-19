@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/PrimaryHeaderContainer.dart';
@@ -8,10 +10,12 @@ import 'package:graduation_project/Pages/DoctorProfilePage/CustomDivider.dart';
 import 'package:graduation_project/Pages/DoctorProfilePage/DoctorCard.dart';
 import 'package:graduation_project/Pages/DoctorProfilePage/TimeScrollView.dart';
 import 'package:graduation_project/api/getDoctorProfile.dart';
-import 'package:graduation_project/api/getDoctorScheduleById.dart';
 import 'package:graduation_project/model/DoctorProfile.dart';
-import 'package:graduation_project/model/DoctorSchedule.dart';
-import './WeekDays.dart';
+import 'package:graduation_project/model/Patient.dart';
+import 'package:graduation_project/model/TimeSlot.dart';
+import '../../api/reserveTimeSlot.dart';
+import '../../model/DoctorSchedule.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DoctorProfilePage extends StatefulWidget {
   final doctor_id;
@@ -24,9 +28,26 @@ class DoctorProfilePage extends StatefulWidget {
 class _DoctorProfilePageState extends State<DoctorProfilePage> {
   late DoctorProfile doctorProfile;
 
+  // bool patientInitialized = false;
+  // late Patient patient;
+
   int activeDay = 0;
   int activeTimeSlot = 0;
   var loading = false;
+  var reserving = false;
+  var reserved = false;
+
+  void revertLoading() {
+    setState(() {
+      loading = !loading;
+    });
+  }
+
+  void revertReserving() {
+    setState(() {
+      reserving = !reserving;
+    });
+  }
 
   void updateActiveDay(int index) {
     setState(() {
@@ -40,10 +61,25 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
     });
   }
 
-  void revertLoading() {
+  // Future<Patient> readPatientData() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   var patientDataString = await prefs.getString('patient');
+  //   var decoded = json.decode((patientDataString as String));
+  //   patient = Patient.fromJson(decoded);
+  //   return patient;
+  // }
+
+  void reserverTimeSlotFunction() async {
+    await reserveTimeSlot(
+        doctorSchedule: doctorProfile.clinic.doctorSchedule,
+        activeDay: activeDay,
+        activeTimeSlot: activeTimeSlot,
+        revertReserving: revertReserving);
     setState(() {
-      loading = !loading;
+      reserved = true;
     });
+    print(doctorProfile
+        .clinic.doctorSchedule[activeDay].timeSlot[activeTimeSlot]);
   }
 
   void setDoctorProfile({required DoctorProfile doctorProfile}) {
@@ -59,8 +95,14 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
 
   @override
   void initState() {
-    loadDoctorProfile();
     super.initState();
+    loadDoctorProfile();
+    // readPatientData().then((patientObject) {
+    //   setState(() {
+    //     patient = patientObject;
+    //     patientInitialized = true;
+    //   });
+    // });
   }
 
   @override
@@ -142,7 +184,11 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                           // const SizedBox(height: 35.0),
 
                           ///Booking Button
-                          CustomBookButton()
+                          CustomBookButton(
+                              reserverTimeSlotFunction:
+                                  reserverTimeSlotFunction,
+                              reserving: reserving,
+                              reserved: reserved)
                         ],
                       ),
                     )

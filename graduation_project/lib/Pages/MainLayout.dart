@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/CustomNavigationBar.dart';
 import 'package:graduation_project/Pages/Profile/Profile.dart';
+import 'package:graduation_project/Pages/EMRPage/EMRPage.dart';
 import 'package:graduation_project/Pages/Schedule.dart';
 
 import 'Home.dart';
@@ -13,14 +14,27 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
+  var search = false;
   int currentView = 0;
-  Map<int, Widget> widgetMap = {0: Home(), 1: Schedule(), 4: Profile()};
+
+  void revertSearch() {
+    setState(() {
+      search = !search;
+    });
+  }
 
   void updateView(int index) {
     setState(() {
       currentView = index;
     });
   }
+
+  Map<int, Widget> widgetMap = {
+    0: Home(),
+    1: Schedule(),
+    3: EMRPage(),
+    4: Profile()
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +43,8 @@ class _MainLayoutState extends State<MainLayout> {
       right: true,
       child: Scaffold(
         body: widgetMap[currentView],
-        bottomNavigationBar: CustomNavigationBar(updateView: updateView),
+        bottomNavigationBar:
+            (!search) ? CustomNavigationBar(updateView: updateView) : null,
       ),
     );
   }

@@ -11,7 +11,6 @@ import 'package:graduation_project/Pages/Profile/Notifictions.dart';
 import 'package:graduation_project/Pages/Profile/Policy.dart';
 import 'package:graduation_project/Pages/Profile/Settings.dart';
 import './class/AppRouter.dart';
-import 'package:graduation_project/Pages/Home.dart';
 import 'package:graduation_project/Pages/Login.dart';
 import 'package:graduation_project/Pages/Onboarding/onboarding.dart';
 import 'package:graduation_project/Pages/Profile/Profile.dart';
@@ -53,7 +52,6 @@ class MyApp extends StatelessWidget {
         AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
         AppRouter.getSignUpRoute(): (context) => SignUp(),
         AppRouter.getLoginRoute(): (context) => Login(),
-        AppRouter.getHomeRoute(): (context) => Home(),
         AppRouter.getSpecialityRoute(): (context) => Speciality(),
         AppRouter.getProfileRoute(): (context) => Profile(),
         AppRouter.getScheduleList(): (context) => Schedule(),

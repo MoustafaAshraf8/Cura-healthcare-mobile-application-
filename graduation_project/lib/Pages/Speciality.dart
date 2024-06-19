@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/SecondaryHeaderContainer.dart';
-import 'package:graduation_project/Contants/CustomShapes/SearchBar/SearchBar.dart';
+import 'package:graduation_project/Contants/CustomShapes/CustomSearchBar/CustomSearchBar.dart';
 import 'package:graduation_project/Pages/DoctorsList.dart';
 
 //MedicalSpeciality class to be added to the GridView.builder
@@ -76,7 +76,7 @@ class _SpecialityState extends State<Speciality> {
         child: Column(
           children: [
             ///Header --Page Header-- (Blue Part) --> Using Secondary Header Container "Not the home page"
-            const SecondaryHeaderContainer(
+            SecondaryHeaderContainer(
                 child: Column(
               children: [
                 //Header AppBar
@@ -102,7 +102,7 @@ class _SpecialityState extends State<Speciality> {
                   height: 16.0,
                 ),
                 //SearchBar
-                Searchbar(),
+                CustomSearchBar(revertSearch: () {}),
               ],
             )),
 
