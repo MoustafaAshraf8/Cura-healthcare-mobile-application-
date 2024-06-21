@@ -1,11 +1,9 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import 'package:graduation_project/model/Allergy.dart';
 import 'package:graduation_project/model/Patient.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<List<Allergy>> getEMRAllergy() async {
+Future<bool> deleteReservedTimeSlot({required timeslot_id}) async {
   await Future.delayed(Duration(seconds: 1));
   try {
     final prefs = await SharedPreferences.getInstance();
@@ -15,25 +13,23 @@ Future<List<Allergy>> getEMRAllergy() async {
 
     final dio = Dio();
     dio.options.baseUrl = "http://10.0.2.2:8080/api/";
-    const url = "patient/emr/allergy";
+    final url = "patient/timeslot/${timeslot_id}";
     dio.options.responseType = ResponseType.plain;
     final cancelToken = CancelToken();
-    Response response = await dio.get(url,
-        cancelToken: cancelToken,
-        options: Options(headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer ${patient.accessToken}",
-        }));
+    Response response = await dio.delete(
+      url,
+      cancelToken: cancelToken,
+      options: Options(headers: {
+        "Authorization": "Bearer ${patient.accessToken}",
+      }),
+    );
     if (response.statusCode == 200) {
-      var decoded = json.decode(response.data.toString());
-      return decoded
-          .map<Allergy>((allergy) => new Allergy.fromJson(allergy))
-          .toList();
+      return true;
     } else {
-      throw Exception('Failed to load allergy.');
+      throw Exception('Failed to delete reserverTimeSlot.');
     }
   } catch (e) {
     print(e);
-    return Future.error(e);
+    return false;
   }
 }

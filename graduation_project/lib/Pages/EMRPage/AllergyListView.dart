@@ -3,6 +3,7 @@ import 'package:graduation_project/Pages/EMRPage/AllergyCard.dart';
 import 'package:graduation_project/Pages/EMRPage/LoadingCard.dart';
 import 'package:graduation_project/api/getEMRAllergy.dart';
 import 'package:graduation_project/model/Allergy.dart';
+import 'package:graduation_project/model/Patient.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 
 class AllergyListView extends StatelessWidget {

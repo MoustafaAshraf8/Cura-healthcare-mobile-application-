@@ -14,10 +14,10 @@ import './class/AppRouter.dart';
 import 'package:graduation_project/Pages/Login.dart';
 import 'package:graduation_project/Pages/Onboarding/onboarding.dart';
 import 'package:graduation_project/Pages/Profile/Profile.dart';
-import 'package:graduation_project/Pages/Schedule.dart';
+import 'package:graduation_project/Pages/SchedulePage/Schedule.dart';
 import 'package:graduation_project/Pages/SignUp.dart';
 import 'package:graduation_project/Pages/Speciality.dart';
-//
+
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRouter.getSettingsRoute(),
+      initialRoute: AppRouter.getLoginRoute(),
       //
       title: 'Localizations Sample App',
       localizationsDelegates: [
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         Locale('en'),
         Locale('ar'),
       ],
-      //
+
       routes: {
         AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
         AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),

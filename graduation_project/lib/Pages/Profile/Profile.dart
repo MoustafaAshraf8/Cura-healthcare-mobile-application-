@@ -5,6 +5,7 @@ import 'package:graduation_project/Pages/Profile/HelpCenterEmail.dart';
 import 'package:graduation_project/Pages/Profile/MyAccount.dart';
 import 'package:graduation_project/Pages/Profile/Notifictions.dart';
 import 'package:graduation_project/Pages/Profile/Settings.dart';
+import 'package:graduation_project/class/AppTheme.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -23,19 +24,19 @@ class Profile extends StatelessWidget {
                 height: 5,
               ),
               const TAppBar(
-                showBackArrow: true,
-                title: Text("Profile",
+                showBackArrow: false,
+                title: Text("",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white)),
-                actions: [
-                  Icon(
-                    Icons.person_pin_rounded,
-                    color: Colors.white,
-                    size: 27,
-                  ),
-                ],
+                // actions: [
+                //   Icon(
+                //     Icons.person_pin_rounded,
+                //     color: Colors.white,
+                //     size: 27,
+                //   ),
+                // ],
               ),
               //Profile Picture
               Center(
@@ -48,8 +49,9 @@ class Profile extends StatelessWidget {
                     children: [
                       //Profile "Big Circle"
                       CircleAvatar(
-                          backgroundImage: NetworkImage(
-                              "http://10.0.2.2:80/image/6618fb7db4dfa8686e3fe4d7")),
+                        backgroundImage: AssetImage("assets/img/Logo/Cura.png"),
+                        // backgroundColor: AppTheme.customBlue,
+                      ),
                       //Camera Icon "Small Circle"
                       Positioned(
                         right: -12,

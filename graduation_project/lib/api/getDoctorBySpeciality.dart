@@ -16,9 +16,6 @@ Future<bool> getDoctorBySpeciality(
   dio.options.queryParameters = {"speciality": speciality};
   try {
     revertLoading();
-
-    // Response response =
-    //     await dio.post(url, cancelToken: cancelToken, data: user.toJson());
     Response response = await dio.request(url);
     if (response.statusCode == 200) {
       var decoded = json.decode(response.data.toString());

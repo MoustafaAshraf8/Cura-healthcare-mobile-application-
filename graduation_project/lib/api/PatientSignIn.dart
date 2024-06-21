@@ -21,7 +21,6 @@ Future<bool> signIn(
     Response response = await dio.request(url, data: user.toJson());
     if (response.statusCode == 200) {
       revertLoading();
-      print(response);
       var decoded = json.decode(response.data.toString());
       var patient = Patient.fromJson(decoded);
       print(patient.toJson());

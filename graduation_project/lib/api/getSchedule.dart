@@ -1,12 +1,10 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import 'package:graduation_project/model/Allergy.dart';
 import 'package:graduation_project/model/Patient.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<List<Allergy>> getEMRAllergy() async {
-  await Future.delayed(Duration(seconds: 1));
+Future<List<dynamic>> getSchedule() async {
+  await Future.delayed(Duration(seconds: 5));
   try {
     final prefs = await SharedPreferences.getInstance();
     var patientDataString = await prefs.getString('patient');
@@ -15,7 +13,7 @@ Future<List<Allergy>> getEMRAllergy() async {
 
     final dio = Dio();
     dio.options.baseUrl = "http://10.0.2.2:8080/api/";
-    const url = "patient/emr/allergy";
+    const url = "patient/schedule";
     dio.options.responseType = ResponseType.plain;
     final cancelToken = CancelToken();
     Response response = await dio.get(url,
@@ -25,12 +23,10 @@ Future<List<Allergy>> getEMRAllergy() async {
           "Authorization": "Bearer ${patient.accessToken}",
         }));
     if (response.statusCode == 200) {
-      var decoded = json.decode(response.data.toString());
-      return decoded
-          .map<Allergy>((allergy) => new Allergy.fromJson(allergy))
-          .toList();
+      List<dynamic> decoded = json.decode(response.data.toString()).toList();
+      return decoded;
     } else {
-      throw Exception('Failed to load allergy.');
+      throw Exception('Failed to load chronicIllness.');
     }
   } catch (e) {
     print(e);
