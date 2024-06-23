@@ -5,16 +5,10 @@ import 'package:graduation_project/api/getEMRAllergy.dart';
 import 'package:graduation_project/model/Allergy.dart';
 import 'package:graduation_project/model/Patient.dart';
 import 'package:loading_indicator/loading_indicator.dart';
+import '../SchedulePage/CustomLoadingScheduleCard.dart';
 
 class AllergyListView extends StatelessWidget {
   AllergyListView({super.key});
-
-  final List<LoadingCard> _loadingCardList = [
-    LoadingCard(),
-    LoadingCard(),
-    LoadingCard(),
-    LoadingCard()
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +19,11 @@ class AllergyListView extends StatelessWidget {
             return Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: _loadingCardList.length,
+                itemCount: 4,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: _loadingCardList[index],
+                    child: CustomLoadingScheduleCard(),
                   );
                 },
               ),

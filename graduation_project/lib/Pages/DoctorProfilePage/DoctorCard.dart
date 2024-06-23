@@ -17,28 +17,28 @@ class DoctorCard extends StatelessWidget {
       child: Stack(
         children: [
           //Text "Doctor Card"
-          const Positioned(
-              top: 10,
-              left: 135,
-              child: Text(
-                "Docotor Card",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              )),
+          // const Positioned(
+          //     top: 10,
+          //     left: 135,
+          //     child: Text(
+          //       "Docotor Card",
+          //       style: TextStyle(
+          //           color: Colors.black,
+          //           fontSize: 20,
+          //           fontWeight: FontWeight.bold),
+          //     )),
           //Menu Icon
-          const Positioned(
-              top: 10,
-              right: 15,
-              child: Icon(
-                Icons.menu,
-                size: 25,
-              )),
-          const SizedBox(height: 5),
+          // const Positioned(
+          //     top: 10,
+          //     right: 15,
+          //     child: Icon(
+          //       Icons.menu,
+          //       size: 25,
+          //     )),
+          // const SizedBox(height: 5),
           //Profile Picture
           const Positioned(
-              top: 30,
+              top: 10,
               left: 10,
               child: CircleAvatar(
                 radius: 70,
@@ -46,7 +46,7 @@ class DoctorCard extends StatelessWidget {
               )),
           //Column contains : (Doctor's data : Verified/Name/Speciality/Rating)
           Positioned(
-              top: 60,
+              top: 40,
               right: 10,
               child: Column(
                 children: [

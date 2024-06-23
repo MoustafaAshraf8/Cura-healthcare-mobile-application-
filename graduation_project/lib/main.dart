@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
       initialRoute: AppRouter.getLoginRoute(),
-      //
       title: 'Localizations Sample App',
       localizationsDelegates: [
         AppLocalizations.delegate,
@@ -46,7 +45,6 @@ class MyApp extends StatelessWidget {
         Locale('en'),
         Locale('ar'),
       ],
-
       routes: {
         AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
         AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),

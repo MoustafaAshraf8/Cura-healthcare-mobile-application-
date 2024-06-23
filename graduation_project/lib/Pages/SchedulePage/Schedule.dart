@@ -21,7 +21,6 @@ class Schedule extends StatefulWidget {
 class _ScheduleScreenState extends State<Schedule> {
   int _buttonIndex = 0;
   bool _isInAsyncCall = false;
-  double bur = 5;
   Future<List<dynamic>> schedules = getSchedule();
   void cancelTimeSlotFunction({required index, required timeslot_id}) async {
     setState(() {
@@ -52,7 +51,7 @@ class _ScheduleScreenState extends State<Schedule> {
         body: ModalProgressHUD(
           inAsyncCall: _isInAsyncCall,
           opacity: 0.1,
-          blur: bur,
+          blur: 5,
           progressIndicator:
               CircularProgressIndicator(color: AppTheme.customBlue),
           child: Column(
