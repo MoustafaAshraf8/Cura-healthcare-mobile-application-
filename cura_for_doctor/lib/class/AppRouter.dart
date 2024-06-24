@@ -1,6 +1,7 @@
 class AppRouter {
   static String _home = "/Home";
   static String _signUp = "/SignUp";
+  static String _chooseSpecialityPage = "/ChooseSpecialityPage";
   static String _logIn = "/Login";
   static String _onBoarding = "/Onboarding";
   static String _profile = "/Profile";
@@ -24,6 +25,10 @@ class AppRouter {
 
   static String getSignUpRoute() {
     return _signUp;
+  }
+
+  static String getChooseSpecialityPage() {
+    return _chooseSpecialityPage;
   }
 
   static String getLoginRoute() {
