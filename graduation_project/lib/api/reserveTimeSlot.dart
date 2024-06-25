@@ -15,7 +15,8 @@ Future<bool> reserveTimeSlot(
     revertReserving();
     final dio = Dio();
     dio.options.baseUrl = "http://10.0.2.2:8080/api/";
-    const url = "patient/reserveTimeSlot";
+    final url =
+        "patient/timeslot/${doctorSchedule[activeDay].timeSlot[activeTimeSlot].timeslot_id}";
     dio.options.responseType = ResponseType.plain;
 
     final cancelToken = CancelToken();
@@ -27,10 +28,6 @@ Future<bool> reserveTimeSlot(
 
     Response response = await dio.post(url,
         cancelToken: cancelToken,
-        data: {
-          "timeslot_id":
-              doctorSchedule[activeDay].timeSlot[activeTimeSlot].timeslot_id
-        },
         options: Options(headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer ${patient.accessToken}",
@@ -38,8 +35,6 @@ Future<bool> reserveTimeSlot(
     if (response.statusCode == 200) {
       var decoded = json.decode(response.data.toString());
       var updatedTimeSlot = TimeSlot.fromJson(decoded);
-      print("#######################");
-      print(updatedTimeSlot);
       revertReserving();
       return true;
     } else {

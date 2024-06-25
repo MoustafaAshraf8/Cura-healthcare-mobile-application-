@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
-import 'package:graduation_project/Contants/CustomShapes/Card/ScheduleCard.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/SecondaryHeaderContainer.dart';
-import 'package:graduation_project/Pages/EMRPage/AllergyCard.dart';
-import 'package:graduation_project/Pages/EMRPage/ChronicIllnessCard.dart';
 import 'package:graduation_project/Pages/EMRPage/AllergyListView.dart';
 import 'package:graduation_project/Pages/EMRPage/ChronicIllnessListView.dart';
-import '../../Contants/CustomShapes/CustomLoading/CustomLoading.dart';
 
 class EMRPage extends StatefulWidget {
   const EMRPage({super.key});
@@ -46,18 +42,18 @@ class _EMRPageState extends State<EMRPage> {
                   height: 5,
                 ),
                 TAppBar(
-                  showBackArrow: true,
+                  showBackArrow: false,
                   title: Text("EMR",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.white)),
                   actions: [
-                    Icon(
-                      Icons.history,
-                      color: Colors.white,
-                      size: 27,
-                    ),
+                    // Icon(
+                    //   Icons.history,
+                    //   color: Colors.white,
+                    //   size: 27,
+                    // ),
                   ],
                 ),
                 SizedBox(

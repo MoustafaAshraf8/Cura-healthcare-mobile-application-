@@ -19,8 +19,8 @@ import 'package:cura_for_doctor/Pages/Profile/Notifictions.dart';
 import 'package:cura_for_doctor/Pages/Profile/Policy.dart';
 import 'package:cura_for_doctor/Pages/Profile/Profile.dart';
 import 'package:cura_for_doctor/Pages/Profile/Settings.dart';
-import 'package:cura_for_doctor/Pages/SignUp.dart';
-import 'package:cura_for_doctor/Pages/UploadData.dart';
+import 'package:cura_for_doctor/Pages/SignUpPage/SignUpPage.dart';
+import 'package:cura_for_doctor/Pages/SignUpPage/UploadCertificate.dart';
 import 'package:cura_for_doctor/class/AppRouter.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -78,9 +78,9 @@ class MyApp extends StatelessWidget {
             ],
             //
             routes: {
-              AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
+              // AppRouter.getMainLayoutRouter(): (context) => MainLayout(),
               AppRouter.getOnBoardingRoute(): (context) => OnboardingPage(),
-              AppRouter.getSignUpRoute(): (context) => SignUp(),
+              AppRouter.getSignUpRoute(): (context) => SignUpPage(),
               AppRouter.getLoginRoute(): (context) => Login(),
               AppRouter.getForgetPasswordRoute(): (context) => ForgetPassword(),
               AppRouter.getVerificationCodeRoute(): (context) =>
@@ -102,6 +102,7 @@ class MyApp extends StatelessWidget {
                   HelpCenterEmail(),
               AppRouter.getPolicyAndAgreementsRoute(): (context) => policy(),
               AppRouter.getUploadDataRoute(): (context) => UploadAndTakeData(),
+              // AppRouter.getUploadDataRoute(): (context) => UploadCertificate(),
             },
           ),
         );

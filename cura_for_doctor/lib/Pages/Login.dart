@@ -3,7 +3,7 @@
 import 'dart:math';
 
 import 'package:cura_for_doctor/Pages/ForgetPassword/ForgetPassword.dart';
-import 'package:cura_for_doctor/Pages/SignUp.dart';
+import 'package:cura_for_doctor/Pages/SignUpPage/SignUpPage.dart';
 import 'package:cura_for_doctor/api/DoctorSignIn.dart';
 import 'package:cura_for_doctor/class/AppRouter.dart';
 import 'package:cura_for_doctor/model/Doctor.dart';
@@ -153,7 +153,8 @@ class _LoginState extends State<Login> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => SignUp()),
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpPage()),
                             );
                           },
                           child: Text(

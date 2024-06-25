@@ -2,7 +2,7 @@
 
 import 'package:cura_for_doctor/Pages/Onboarding/color.dart';
 import 'package:cura_for_doctor/Pages/Onboarding/onboarding_data.dart';
-import 'package:cura_for_doctor/Pages/SignUp.dart';
+import 'package:cura_for_doctor/Pages/SignUpPage/SignUpPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -128,7 +128,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ? currentIndex++
                   : Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignUp()),
+                      MaterialPageRoute(builder: (context) => SignUpPage()),
                     );
             });
           },
@@ -148,7 +148,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           setState(() {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SignUp()),
+              MaterialPageRoute(builder: (context) => SignUpPage()),
             );
           });
         },

@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/model/Patient.dart';
+import 'package:graduation_project/model/TimeSlot.dart';
 
 class CustomBookButton extends StatefulWidget {
   final Function reserverTimeSlotFunction;
-  final bool reserving;
+  final bool disable;
   final bool reserved;
+  // final TimeSlot selectedTimeSlot;
+  // final Patient patient;
   CustomBookButton(
       {super.key,
+      // required this.selectedTimeSlot,
+      // required this.patient,
       required this.reserverTimeSlotFunction,
-      required this.reserving,
+      required this.disable,
       required this.reserved});
 
   @override
@@ -27,26 +33,23 @@ class _CustomBookButtonState extends State<CustomBookButton> {
         child: GestureDetector(
           // onTap: () {},
           onTap: () {
-            widget.reserverTimeSlotFunction();
+            if (widget.disable == false) widget.reserverTimeSlotFunction();
           },
           child: Container(
             height: 50,
             width: size.width,
             child: Center(
-              child: (widget.reserved)
-                  ? Icon(
-                      Icons.done_outline_rounded,
-                      size: 40.0,
-                      color: Colors.black,
-                    )
-                  : (widget.reserving == false)
-                      ? Text("Book Appointment",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold))
-                      : Text("reserving"),
-            ),
+                child: (widget.reserved)
+                    ? Icon(
+                        Icons.done_outline_rounded,
+                        size: 40.0,
+                        color: Colors.black,
+                      )
+                    : Text("Book Appointment",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold))),
           ),
         ),
       ),

@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import 'package:graduation_project/model/Allergy.dart';
 import 'package:graduation_project/model/ChronicIllness.dart';
 import 'package:graduation_project/model/Patient.dart';
 import 'package:shared_preferences/shared_preferences.dart';

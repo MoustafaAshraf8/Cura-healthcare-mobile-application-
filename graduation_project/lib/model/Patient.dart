@@ -21,7 +21,7 @@ class Patient {
       this.DOB = "2030-10-10"});
 
   factory Patient.fromJson(Map<String, dynamic> json) {
-    print(json);
+    // print(json);
     try {
       return Patient(
           patient_id:
