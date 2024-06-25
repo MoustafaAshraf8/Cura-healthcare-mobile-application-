@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
     Category(
         imgPath: "assets/img/Categories/4.jpg",
         title: "ChatBot",
-        route: "/Home"),
+        route: "/ChatBot"),
     Category(
         imgPath: "assets/img/Categories/5.jpg",
         title: "Offers",

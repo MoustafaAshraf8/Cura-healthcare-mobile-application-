@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Pages/AboutUs.dart';
+import 'package:graduation_project/Pages/ChatBot.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ResetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/VerificationCode.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRouter.getSettingsRoute(),
+      initialRoute: AppRouter.getMainLayoutRouter(),
       //
       title: 'Localizations Sample App',
       localizationsDelegates: [
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
         AppRouter.getSettingsRoute(): (context) => Settings(),
         AppRouter.getHelpCenterEmailRoute(): (context) => HelpCenterEmail(),
         AppRouter.getPolicyAndAgreementsRoute(): (context) => policy(),
+        AppRouter.getChatBotRoute(): (context) => chatScreen(),
       },
     );
   }
