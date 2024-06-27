@@ -1,0 +1,8 @@
+{
+  "helloWorld": "Hello World!",
+  "settings":"Settings",
+  "notif":"Notifications",
+  "log":"Log Out",
+  "msg":"Message",
+  "sendM":"Send Message"
+}

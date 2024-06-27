@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:graduation_project/Pages/EMRPage/AllergyCard.dart';
+import 'package:graduation_project/Pages/EMRPage/LoadingCard.dart';
+import 'package:graduation_project/api/getEMRAllergy.dart';
+import 'package:graduation_project/model/Allergy.dart';
+import 'package:graduation_project/model/Patient.dart';
+import 'package:loading_indicator/loading_indicator.dart';
+import '../SchedulePage/CustomLoadingScheduleCard.dart';
+
+class AllergyListView extends StatelessWidget {
+  AllergyListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<Allergy>>(
+        future: getEMRAllergy(),
+        builder: (BuildContext context, AsyncSnapshot<List<Allergy>> snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: CustomLoadingScheduleCard(),
+                  );
+                },
+              ),
+            );
+          } else if (snapshot.hasError || !snapshot.hasData) {
+            return Text("error");
+          }
+          return Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: AllergyCard(allergy: snapshot.data![index]),
+                );
+              },
+            ),
+          );
+        });
+  }
+}
