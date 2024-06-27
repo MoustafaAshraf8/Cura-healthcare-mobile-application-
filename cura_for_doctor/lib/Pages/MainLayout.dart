@@ -1,5 +1,7 @@
 import 'package:cura_for_doctor/Contants/CustomShapes/NavigationBar/CustomNavigationBar.dart';
 import 'package:cura_for_doctor/Pages/Profile.dart';
+import 'package:cura_for_doctor/Pages/Profile/Profile.dart';
+import 'package:cura_for_doctor/model/Doctor.dart';
 import 'package:flutter/material.dart';
 
 class MainLayout extends StatefulWidget {

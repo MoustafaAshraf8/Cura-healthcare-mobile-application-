@@ -20,6 +20,7 @@ class AppRouter {
   static String _settings = "/Settings";
   static String _helpCenterEmail = "/HelpCenterEmail";
   static String _policyandagreements = "/Policy";
+  static String _chatBot = "/ChatBot";
 
   constructor() {}
 
@@ -101,6 +102,10 @@ class AppRouter {
 
   static String getPolicyAndAgreementsRoute() {
     return _policyandagreements;
+  }
+
+  static String getChatBotRoute() {
+    return _chatBot;
   }
 }
 

@@ -15,6 +15,12 @@ class AppRouter {
   static String _eventEditing = "/EventEding";
   static String _eventViewing = "/EventViewing";
 
+  static String _myAccount = "/MyAccount";
+  static String _editmyAccount = "/EditMyAccount";
+  static String _notifications = "/Notifications";
+  static String _settings = "/Settings";
+  static String _helpCenterEmail = "/HelpCenterEmail";
+  static String _policyandagreements = "/Policy";
   static String _uploaddata = "/UploadData";
 
   constructor() {}
@@ -81,6 +87,30 @@ class AppRouter {
 
   static String getUploadDataRoute() {
     return _uploaddata;
+  }
+
+  static String getMyAccountRoute() {
+    return _myAccount;
+  }
+
+  static String getEditMyAccountRoute() {
+    return _editmyAccount;
+  }
+
+  static String getNotificationsRoute() {
+    return _notifications;
+  }
+
+  static String getSettingsRoute() {
+    return _settings;
+  }
+
+  static String getHelpCenterEmailRoute() {
+    return _helpCenterEmail;
+  }
+
+  static String getPolicyAndAgreementsRoute() {
+    return _policyandagreements;
   }
 }
 
