@@ -1,0 +1,1 @@
+ D:\\00-GitHub\\Cura\\cura_for_doctor\\.dart_tool\\flutter_build\\4a1a74b19b90d082565a9b604b5d6d3d\\native_assets.yaml: 
