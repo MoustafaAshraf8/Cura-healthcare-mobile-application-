@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRouter.getMainLayoutRouter(),
+      initialRoute: AppRouter.getLoginRoute(),
       //
       title: 'Localizations Sample App',
       localizationsDelegates: [
