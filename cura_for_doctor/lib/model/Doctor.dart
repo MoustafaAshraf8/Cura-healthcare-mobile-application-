@@ -6,7 +6,7 @@ class Doctor {
   String? Email;
   String? DOB;
   int? Rating;
-  int? Experience;
+  String? Experience;
   String? PhoneNumber;
   String? Password;
   int? speciality_id;

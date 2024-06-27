@@ -4,9 +4,10 @@ import 'package:cura_for_doctor/model/Doctor.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-Future<Doctor> doctorSignUp(
+Future<bool> doctorSignUp(
     {required Doctor doctor, required Function revertLoading}) async {
   revertLoading();
+
   await Future.delayed(Duration(seconds: 5));
   final dio = Dio();
   dio.options.baseUrl = "http://10.0.2.2:8080/api/";
@@ -27,13 +28,13 @@ Future<Doctor> doctorSignUp(
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString("doctor", json.encode(newDoctor.toJson()));
       revertLoading();
-      return newDoctor;
+      return true;
     } else {
       revertLoading();
       throw Exception('Failed to sign up.');
     }
   } catch (e) {
     print(e);
-    return Future.error(e);
+    return false;
   }
 }

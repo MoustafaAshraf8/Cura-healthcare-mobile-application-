@@ -1,8 +1,12 @@
 //import 'package:cura_for_doctor/model/Doctor.dart';
+import 'dart:convert';
+
+import 'package:cura_for_doctor/model/Doctor.dart';
 import 'package:dio/dio.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../model/User.dart';
 
-Future<bool> signIn(
+Future<bool> DoctorSignIn(
     {required User user, required Function revertLoading}) async {
   final dio = Dio();
   dio.options.method = "POST";
@@ -12,24 +16,24 @@ Future<bool> signIn(
   const url = "doctor/login";
   try {
     revertLoading();
-
-    // Response response =
-    //     await dio.post(url, cancelToken: cancelToken, data: user.toJson());
+    print(user.toJson());
     Response response = await dio.request(url, data: user.toJson());
 
     if (response.statusCode == 200) {
-      revertLoading();
       print(response);
+      final decoded = json.decode(response.data.toString());
+      final Doctor doctor = Doctor.fromJson(decoded);
+      SharedPreferences.setMockInitialValues({});
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString("doctor", response.data.toString());
+      await Future.delayed(Duration(seconds: 2));
       return true;
     } else {
-      revertLoading();
-      // If the server did not return a 200 OK! response,
-      // then throw an exception.
       throw Exception('Failed to sign in');
     }
   } catch (e) {
     print(e);
     cancelToken.cancel();
-    throw e;
+    return false;
   }
 }

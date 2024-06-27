@@ -33,7 +33,8 @@ class _CustomBookButtonState extends State<CustomBookButton> {
         child: GestureDetector(
           // onTap: () {},
           onTap: () {
-            if (widget.disable == false) widget.reserverTimeSlotFunction();
+            // if (widget.disable == false) widget.reserverTimeSlotFunction();
+            widget.reserverTimeSlotFunction();
           },
           child: Container(
             height: 50,

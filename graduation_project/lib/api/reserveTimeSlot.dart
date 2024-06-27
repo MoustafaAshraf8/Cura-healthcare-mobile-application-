@@ -11,6 +11,7 @@ Future<bool> reserveTimeSlot(
     required int activeDay,
     required int activeTimeSlot,
     required Function revertReserving}) async {
+  print("-------------------------");
   try {
     revertReserving();
     final dio = Dio();

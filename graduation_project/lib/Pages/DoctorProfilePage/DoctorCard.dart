@@ -38,8 +38,8 @@ class DoctorCard extends StatelessWidget {
           // const SizedBox(height: 5),
           //Profile Picture
           const Positioned(
-              top: 10,
-              left: 10,
+              top: 20,
+              left: 20,
               child: CircleAvatar(
                 radius: 70,
                 backgroundImage: AssetImage("assets/img/Logo/Cura.png"),
@@ -47,7 +47,7 @@ class DoctorCard extends StatelessWidget {
           //Column contains : (Doctor's data : Verified/Name/Speciality/Rating)
           Positioned(
               top: 40,
-              right: 10,
+              right: 40,
               child: Column(
                 children: [
                   Container(

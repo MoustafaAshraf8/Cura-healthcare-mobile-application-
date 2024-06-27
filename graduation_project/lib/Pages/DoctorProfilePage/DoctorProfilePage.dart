@@ -13,10 +13,8 @@ import 'package:graduation_project/api/getDoctorProfile.dart';
 import 'package:graduation_project/class/AppTheme.dart';
 import 'package:graduation_project/model/DoctorProfile.dart';
 import 'package:graduation_project/model/Patient.dart';
-import 'package:graduation_project/model/TimeSlot.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../api/reserveTimeSlot.dart';
-import '../../model/DoctorSchedule.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DoctorProfilePage extends StatefulWidget {

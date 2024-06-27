@@ -8,7 +8,6 @@ import 'package:cura_for_doctor/class/AppTheme.dart';
 import 'package:cura_for_doctor/model/Doctor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -56,31 +55,20 @@ class _UploadCertificateState extends State<UploadCertificate> {
   }
 
   void signUpDoctor() async {
-    try {
-      final Doctor doctor = await doctorSignUp(
-          doctor: widget.doctor, revertLoading: revertLoading);
-      print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-      print(doctor.toJson());
-      print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+    final bool success =
+        await doctorSignUp(doctor: widget.doctor, revertLoading: revertLoading);
 
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (_) => MainLayout(doctor: doctor)),
-          (route) => false);
-    } catch (err) {
-      setState(() {
-        loading = false;
-      });
+    if (success) {
+      Navigator.pushAndRemoveUntil(context,
+          MaterialPageRoute(builder: (_) => MainLayout()), (route) => false);
+    } else {
+      revertLoading();
     }
   }
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    print("==============================");
-    print(widget.doctor.toJson());
-    print("==============================");
   }
 
   @override
