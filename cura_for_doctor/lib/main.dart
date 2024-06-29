@@ -1,7 +1,7 @@
 // ignore_for_file: unused_import
 import 'package:cura_for_doctor/Pages/AboutUs.dart';
-import 'package:cura_for_doctor/Pages/Appointments.dart';
-import 'package:cura_for_doctor/Pages/CalenderSchedule/CalenderView.dart';
+import 'package:cura_for_doctor/Pages/AppointmentPage/ReservedTimeSlotPage.dart';
+import 'package:cura_for_doctor/Pages/CalenderSchedule/CalenderViewPage.dart';
 import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/Event.dart';
 import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/EventProvider.dart';
 import 'package:cura_for_doctor/Pages/CalenderSchedule/EventEditing.dart';
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(useMaterial3: false),
             debugShowCheckedModeBanner: false,
             //home: Home(),
-            initialRoute: AppRouter.getMainLayoutRouter(),
+            initialRoute: AppRouter.getLoginRoute(),
             // routes: {
             //   "/Onboarding": (context) => OnboardingPage(),
             //   "/SignUp": (context) => SignUp(),
@@ -87,9 +87,9 @@ class MyApp extends StatelessWidget {
                   VerificationCode(),
               AppRouter.getResetPasswordRoute(): (context) => ResetPassword(),
               AppRouter.getAboutUsRoute(): (context) => AboutUS(),
-              AppRouter.getAppointmentsRoute(): (context) => Appointments(),
-              AppRouter.getProfileRoute(): (context) => Profile(),
-              AppRouter.getCalenderViewRoute(): (context) => CalenderView(),
+
+              // AppRouter.getProfileRoute(): (context) => Profile(),
+              AppRouter.getCalenderViewRoute(): (context) => CalenderViewPage(),
               AppRouter.getEventEditingRoute(): (context) => EventEditing(),
               //AppRouter.getHomeRoute():(context)=>Home()
               //AppRouter.getEventViewingRoute(): (context) => EventViewing(event: Event),
@@ -101,7 +101,6 @@ class MyApp extends StatelessWidget {
               AppRouter.getHelpCenterEmailRoute(): (context) =>
                   HelpCenterEmail(),
               AppRouter.getPolicyAndAgreementsRoute(): (context) => policy(),
-              AppRouter.getUploadDataRoute(): (context) => UploadAndTakeData(),
               // AppRouter.getUploadDataRoute(): (context) => UploadCertificate(),
             },
           ),

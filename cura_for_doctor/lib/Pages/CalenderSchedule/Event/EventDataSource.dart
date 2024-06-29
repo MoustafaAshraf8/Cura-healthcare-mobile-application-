@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/Event.dart';
+import 'package:cura_for_doctor/model/DoctorSchedule.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class EventDataSource extends CalendarDataSource {

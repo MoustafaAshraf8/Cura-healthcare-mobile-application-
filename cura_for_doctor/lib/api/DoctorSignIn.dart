@@ -34,6 +34,7 @@ Future<bool> DoctorSignIn(
   } catch (e) {
     print(e);
     cancelToken.cancel();
+    await Future.delayed(Duration(seconds: 2));
     return false;
   }
 }

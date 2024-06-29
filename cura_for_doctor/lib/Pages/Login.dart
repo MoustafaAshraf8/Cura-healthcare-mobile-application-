@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:cura_for_doctor/Pages/CalenderSchedule/CalenderViewPage.dart';
 import 'package:cura_for_doctor/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:cura_for_doctor/Pages/MainLayout.dart';
 import 'package:cura_for_doctor/Pages/SignUpPage/SignUpPage.dart';
@@ -32,9 +33,8 @@ class _LoginState extends State<Login> {
     User user = User(
         Email: emailTextEditingController.value.text,
         Password: passwordTextEditingController.value.text);
-    bool changeRoute =
-        await DoctorSignIn(user: user, revertLoading: revertLoading);
-    if (changeRoute) {
+    bool success = await DoctorSignIn(user: user, revertLoading: revertLoading);
+    if (success) {
       Navigator.pushAndRemoveUntil(context,
           MaterialPageRoute(builder: (_) => MainLayout()), (route) => false);
     } else {

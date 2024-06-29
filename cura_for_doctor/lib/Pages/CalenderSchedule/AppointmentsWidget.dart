@@ -1,15 +1,13 @@
 import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/EventDataSource.dart';
 import 'package:cura_for_doctor/Pages/CalenderSchedule/Event/EventProvider.dart';
-import 'package:cura_for_doctor/Pages/CalenderSchedule/EventViewing.dart';
-import 'package:cura_for_doctor/class/AppTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class AppointmentsWidget extends StatefulWidget {
-  const AppointmentsWidget({super.key});
+  final DateTime selectedDate;
+  const AppointmentsWidget({required this.selectedDate, super.key});
 
   @override
   State<AppointmentsWidget> createState() => _AppointmentsWidgetState();
@@ -19,7 +17,7 @@ class _AppointmentsWidgetState extends State<AppointmentsWidget> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<EventProvider>(context);
-    final selectedEvents = provider.eventsOfSelectedDate;
+    final selectedEvents = provider.eventsOfSelectedDate(widget.selectedDate);
 
     if (selectedEvents.isEmpty) {
       return Center(
@@ -28,24 +26,26 @@ class _AppointmentsWidgetState extends State<AppointmentsWidget> {
       );
     }
 
-    return SfCalendar(
-      view: CalendarView.timelineDay,
-      dataSource: EventDataSource(provider.events),
-      initialDisplayDate: provider.SelectedDate,
-      appointmentBuilder: appointmentBuilder,
-      todayHighlightColor: Colors.black,
-      selectionDecoration: BoxDecoration(
-        color: Colors.red.withOpacity(0.3),
-      ),
-      onTap: (details) {
-        // if (details.appointments == null) return;
+    return Consumer<EventProvider>(builder: (context, value, child) {
+      return SfCalendar(
+        view: CalendarView.timelineDay,
+        dataSource: EventDataSource(selectedEvents),
+        initialDisplayDate: provider.SelectedDate,
+        appointmentBuilder: appointmentBuilder,
+        todayHighlightColor: Colors.black,
+        selectionDecoration: BoxDecoration(
+          color: Colors.red.withOpacity(0.3),
+        ),
+        onTap: (details) {
+          // if (details.appointments == null) return;
 
-        // final event = details.appointments!.first;
+          // final event = details.appointments!.first;
 
-        // Navigator.of(context)
-        //     .push(MaterialPageRoute(builder: ((context) => EventViewing(event: event,))));
-      },
-    );
+          // Navigator.of(context)
+          //     .push(MaterialPageRoute(builder: ((context) => EventViewing(event: event,))));
+        },
+      );
+    });
   }
 
   Widget appointmentBuilder(

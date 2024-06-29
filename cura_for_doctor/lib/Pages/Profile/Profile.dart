@@ -4,11 +4,13 @@ import 'package:cura_for_doctor/Pages/Profile/HelpCenterEmail.dart';
 import 'package:cura_for_doctor/Pages/Profile/MyAccount.dart';
 import 'package:cura_for_doctor/Pages/Profile/Notifictions.dart';
 import 'package:cura_for_doctor/Pages/Profile/Settings.dart';
+import 'package:cura_for_doctor/model/Doctor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  Doctor? doctor;
+  Profile({this.doctor, super.key});
 
   @override
   Widget build(BuildContext context) {
