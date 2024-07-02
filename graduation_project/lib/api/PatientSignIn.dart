@@ -35,8 +35,9 @@ Future<bool> signIn(
       throw Exception('Failed to sign in');
     }
   } catch (e) {
+    revertLoading();
     print(e);
     cancelToken.cancel();
-    throw e;
+    return false;
   }
 }

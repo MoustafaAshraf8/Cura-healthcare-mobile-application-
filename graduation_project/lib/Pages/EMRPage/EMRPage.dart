@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Contants/CustomShapes/AppBar/AppBar.dart';
 import 'package:graduation_project/Contants/CustomShapes/Containers/SecondaryHeaderContainer.dart';
-import 'package:graduation_project/Pages/EMRPage/AllergyListView.dart';
+import 'package:graduation_project/Pages/EMRPage/AllergyPage/AllergyListView.dart';
 import 'package:graduation_project/Pages/EMRPage/ChronicIllnessListView.dart';
 
 class EMRPage extends StatefulWidget {

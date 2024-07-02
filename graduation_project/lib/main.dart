@@ -5,6 +5,7 @@ import 'package:graduation_project/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ResetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/VerificationCode.dart';
 import 'package:graduation_project/Pages/MainLayout.dart';
+import 'package:graduation_project/Pages/MapPage/MapPage.dart';
 import 'package:graduation_project/Pages/Profile/EditMyAccount.dart';
 import 'package:graduation_project/Pages/Profile/HelpCenterEmail.dart';
 import 'package:graduation_project/Pages/Profile/MyAccount.dart';
@@ -65,9 +66,13 @@ class MyApp extends StatelessWidget {
         AppRouter.getNotificationsRoute(): (context) => Notifications(),
         AppRouter.getSettingsRoute(): (context) => Settings(),
         AppRouter.getHelpCenterEmailRoute(): (context) => HelpCenterEmail(),
+
         AppRouter.getPolicyAndAgreementsRoute(): (context) => policy(),
         AppRouter.getChatBotRoute(): (context) => chatScreen(),
+        "/map": (context) => Mappage()
       },
     );
   }
 }
+
+// AIzaSyDN98kZsshYgEVNEPHroec1hqhkE6JCYkY

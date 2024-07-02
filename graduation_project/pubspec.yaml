@@ -58,6 +58,9 @@ dependencies:
   url_launcher: ^6.2.4
   webview_flutter: ^4.5.0
   modal_progress_hud_nsn: ^0.5.1
+  google_maps_flutter: ^2.7.0
+  image_picker: ^1.1.2
+  file_picker: ^8.0.6
 
 dev_dependencies:
   flutter_test:

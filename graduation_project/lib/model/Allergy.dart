@@ -38,4 +38,14 @@ class Allergy {
       throw const FormatException('Failed to load Allergy.');
     }
   }
+
+  Object getCreateObject() {
+    return {
+      allergen: this.allergen,
+      reaction: this.reaction,
+      severity: this.severity,
+      diagnosisDate: this.diagnosisDate,
+      notes: this.notes
+    };
+  }
 }

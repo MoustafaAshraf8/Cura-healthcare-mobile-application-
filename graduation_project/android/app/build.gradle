@@ -49,6 +49,9 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        // for google maps
+        // This means that app will only be available for users that run Android SDK 20 or higher.
+        minSdkVersion flutter.minSdkVersion
     }
 
     buildTypes {

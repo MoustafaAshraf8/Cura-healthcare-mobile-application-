@@ -43,7 +43,7 @@ class _CustomWebViewPageState extends State<CustomWebViewPage> {
         // image
         // Uri.parse('https://docs.google.com/viewer?url=${randomImage}'),
         Uri.parse(
-            'https://docs.google.com/gview?embedded=true&url=${randompdf}'),
+            'https://prod-images-static.radiopaedia.org/images/1420387/6f63736ff837ff7c5a736b35aba6ab_big_gallery.jpeg'),
         // Uri.parse(
         //     'https://docs.google.com/gview?embedded=true&url=http://${localIp}:8080/api/patient/emr/allergy/file/${widget.file.id}'),
       );
@@ -54,7 +54,7 @@ class _CustomWebViewPageState extends State<CustomWebViewPage> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Flutter WebView'),
+          title: const Text('Cura WebView'),
           leading: IconButton(
             icon: const Icon(Icons.close),
             tooltip: 'CustomWebView',
