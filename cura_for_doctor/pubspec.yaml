@@ -58,6 +58,8 @@ dependencies:
   modal_progress_hud_nsn: ^0.5.1
   shared_preferences: ^2.2.3
   shimmer: ^3.0.0
+  webview_flutter: ^4.8.0
+  file_picker: ^8.0.6
 
 dev_dependencies:
   flutter_test:
@@ -90,6 +92,7 @@ flutter:
     - assets/img/Icons/
     - assets/img/ForgetPassword/
     - assets/img/Specialities/
+    - assets/img/Banners/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -63,6 +63,7 @@ class _EventEditingState extends State<EventEditing> {
           isAllDay: false);
       final provider = Provider.of<EventProvider>(context, listen: false);
       provider.addEvent(event);
+      // provider.not
 
       print("at notifying...");
       Navigator.of(context).pop();

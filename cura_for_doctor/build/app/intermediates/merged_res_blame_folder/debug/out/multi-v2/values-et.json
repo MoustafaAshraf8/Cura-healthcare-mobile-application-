@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.cura_for_doctor.app-mergeDebugResources-23:/values-et/values-et.xml",
+            "outputFile": "com.example.cura_for_doctor.app-mergeDebugResources-24:/values-et/values-et.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Moustafa\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-et\\values.xml",

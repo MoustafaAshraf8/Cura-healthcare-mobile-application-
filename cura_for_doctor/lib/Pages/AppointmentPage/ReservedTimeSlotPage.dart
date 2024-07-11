@@ -3,6 +3,7 @@ import 'package:cura_for_doctor/Contants/CustomShapes/Containers/SecondaryHeader
 import 'package:cura_for_doctor/Pages/AppointmentPage/CustomLoadingCard.dart';
 import 'package:cura_for_doctor/api/deleteReservedTimeSlot.dart';
 import 'package:cura_for_doctor/api/getReservedTimeSlot.dart';
+import 'package:cura_for_doctor/class/AppRouter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -75,11 +76,17 @@ class _ReservedTimeSlotPageState extends State<ReservedTimeSlotPage> {
                             fontWeight: FontWeight.bold,
                             color: Colors.white)),
                     actions: [
-                      // Icon(
-                      //   Icons.app_registration_outlined,
-                      //   color: Colors.white,
-                      //   size: 24.sp,
-                      // ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, AppRouter.getCalenderViewRoute());
+                        },
+                        icon: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 24.sp,
+                        ),
+                      )
                     ],
                   ),
                 ],
@@ -161,6 +168,8 @@ class _ReservedTimeSlotPageState extends State<ReservedTimeSlotPage> {
                         return ScheduleCardPatient(
                           name:
                               "${snapshot.data[index]["patient"]["FirstName"]}  ${snapshot.data[index]["patient"]["LastName"]}",
+                          patient_id: snapshot.data[index]["patient"]
+                              ["patient_id"],
                           gender: snapshot.data[index]["patient"]["Gender"],
                           Date: snapshot.data[index]["schedule"]["Date"],
                           Time: snapshot.data[index]["Start"],

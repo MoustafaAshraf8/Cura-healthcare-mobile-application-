@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:cura_for_doctor/Pages/AppointmentPage/ReservedTimeSlotPage.dart';
 import 'package:cura_for_doctor/Pages/CalenderSchedule/CalenderViewPage.dart';
 import 'package:cura_for_doctor/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:cura_for_doctor/Pages/MainLayout.dart';

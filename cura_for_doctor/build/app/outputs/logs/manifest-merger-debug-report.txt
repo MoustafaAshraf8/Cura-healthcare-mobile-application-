@@ -33,11 +33,13 @@ INJECTED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\main\AndroidMani
 INJECTED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\main\AndroidManifest.xml:1:1-33:12
 INJECTED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\main\AndroidManifest.xml:1:1-33:12
 MERGED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\main\AndroidManifest.xml:1:1-33:12
+MERGED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_native_splash] D:\00-GitHub\Cura\cura_for_doctor\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:image_picker_android] D:\00-GitHub\Cura\cura_for_doctor\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-36:12
 MERGED from [:flutter_plugin_android_lifecycle] D:\00-GitHub\Cura\cura_for_doctor\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:shared_preferences_android] D:\00-GitHub\Cura\cura_for_doctor\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:smart_auth] D:\00-GitHub\Cura\cura_for_doctor\build\smart_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:webview_flutter_android] D:\00-GitHub\Cura\cura_for_doctor\build\webview_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-auth:20.4.0] C:\Users\Moustafa\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\Moustafa\.gradle\caches\transforms-3\06135b7231c11bbf2f81289b2091652f\transformed\jetified-play-services-auth-api-phone-18.0.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] C:\Users\Moustafa\.gradle\caches\transforms-3\c343050519f6d9d2e71fc29aaccef71b\transformed\jetified-play-services-auth-base-18.0.4\AndroidManifest.xml:2:1-7:12
@@ -47,6 +49,7 @@ MERGED from [com.google.android.gms:play-services-tasks:18.0.1] C:\Users\Moustaf
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\Moustafa\.gradle\caches\transforms-3\58aa1384bde170d075503b845cfcf44c\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Moustafa\.gradle\caches\transforms-3\75f94412898c7559d34d7edbbeaeb394\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.7.2] C:\Users\Moustafa\.gradle\caches\transforms-3\a82db410cebe27c9879106e746eca4ec\transformed\jetified-activity-1.7.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.webkit:webkit:1.11.0] C:\Users\Moustafa\.gradle\caches\transforms-3\0a4c2f3052adeac2e7df9a8876a97657\transformed\webkit-1.11.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Moustafa\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Moustafa\.gradle\caches\transforms-3\ff65482bd388a984f10ca7f5c3c41d0d\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Moustafa\.gradle\caches\transforms-3\83543b509ea72d197642ff197da2edd7\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -89,6 +92,8 @@ uses-sdk
 INJECTED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\main\AndroidManifest.xml
 INJECTED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\main\AndroidManifest.xml
+MERGED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_native_splash] D:\00-GitHub\Cura\cura_for_doctor\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_native_splash] D:\00-GitHub\Cura\cura_for_doctor\build\flutter_native_splash\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:image_picker_android] D:\00-GitHub\Cura\cura_for_doctor\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
@@ -99,6 +104,8 @@ MERGED from [:shared_preferences_android] D:\00-GitHub\Cura\cura_for_doctor\buil
 MERGED from [:shared_preferences_android] D:\00-GitHub\Cura\cura_for_doctor\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:smart_auth] D:\00-GitHub\Cura\cura_for_doctor\build\smart_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:smart_auth] D:\00-GitHub\Cura\cura_for_doctor\build\smart_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:webview_flutter_android] D:\00-GitHub\Cura\cura_for_doctor\build\webview_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:webview_flutter_android] D:\00-GitHub\Cura\cura_for_doctor\build\webview_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-auth:20.4.0] C:\Users\Moustafa\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:20.4.0] C:\Users\Moustafa\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\Moustafa\.gradle\caches\transforms-3\06135b7231c11bbf2f81289b2091652f\transformed\jetified-play-services-auth-api-phone-18.0.1\AndroidManifest.xml:5:5-44
@@ -117,6 +124,8 @@ MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Moustafa\.gradle\caches\
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Moustafa\.gradle\caches\transforms-3\75f94412898c7559d34d7edbbeaeb394\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.7.2] C:\Users\Moustafa\.gradle\caches\transforms-3\a82db410cebe27c9879106e746eca4ec\transformed\jetified-activity-1.7.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.7.2] C:\Users\Moustafa\.gradle\caches\transforms-3\a82db410cebe27c9879106e746eca4ec\transformed\jetified-activity-1.7.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.11.0] C:\Users\Moustafa\.gradle\caches\transforms-3\0a4c2f3052adeac2e7df9a8876a97657\transformed\webkit-1.11.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.webkit:webkit:1.11.0] C:\Users\Moustafa\.gradle\caches\transforms-3\0a4c2f3052adeac2e7df9a8876a97657\transformed\webkit-1.11.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Moustafa\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Moustafa\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Moustafa\.gradle\caches\transforms-3\ff65482bd388a984f10ca7f5c3c41d0d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
@@ -171,6 +180,24 @@ uses-permission#android.permission.INTERNET
 ADDED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\debug\AndroidManifest.xml:6:5-66
 	android:name
 		ADDED from D:\00-GitHub\Cura\cura_for_doctor\android\app\src\debug\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-11:38
+	android:maxSdkVersion
+		ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-35
+	android:name
+		ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-64
+queries
+ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-19:15
+intent#action:name:android.intent.action.GET_CONTENT+data:mimeType:*/*
+ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-18:18
+action#android.intent.action.GET_CONTENT
+ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-72
+	android:name
+		ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:15:21-69
+data
+ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-44
+	android:mimeType
+		ADDED from [:file_picker] D:\00-GitHub\Cura\cura_for_doctor\build\file_picker\intermediates\merged_manifest\debug\AndroidManifest.xml:17:19-41
 provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
 ADDED from [:image_picker_android] D:\00-GitHub\Cura\cura_for_doctor\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-19:20
 	android:grantUriPermissions
