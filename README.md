@@ -52,6 +52,12 @@ git clone https://github.com/MoustafaAshraf8/Cura-healthcare-mobile-application-
 
 ### Usage
 
+Navigate to development branch
+
+```
+git checkout dev
+```
+
 #### Below are the steps to run the Patient app
 
 1. Navigate to Patient app
