@@ -35,7 +35,8 @@ Future<bool> reserveTimeSlot(
         }));
     if (response.statusCode == 200) {
       var decoded = json.decode(response.data.toString());
-      var updatedTimeSlot = TimeSlot.fromJson(decoded);
+      // var updatedTimeSlot = TimeSlot.fromJson(decoded);
+      // await Future.delayed(Duration(seconds: 3));
       revertReserving();
       return true;
     } else {

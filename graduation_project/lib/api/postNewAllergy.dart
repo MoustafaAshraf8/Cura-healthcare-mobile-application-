@@ -23,20 +23,8 @@ Future<bool> postNewAllergy({
     dio.options.responseType = ResponseType.plain;
     final cancelToken = CancelToken();
     print("55555555555");
-    List<dynamic> obj = [];
-    customFileList.map((file) {
-      print("77777777777");
-      print(file.base64);
-      print("77777777777");
-      obj.add({
-        "base64": file.base64,
-        "metadata": {
-          "filename": file.metadata.filename,
-          "encoding": file.metadata.encoding,
-          "mimeType": file.metadata.mimeType,
-        }
-      });
-    });
+    // List<dynamic> obj = [];
+
     Response response = await dio.post(url,
         cancelToken: cancelToken,
         options: Options(
@@ -54,7 +42,7 @@ Future<bool> postNewAllergy({
                 DateFormat('yyyy-MM-dd').format(allergy.diagnosisDate),
             "notes": allergy.notes,
           },
-          "files": obj
+          "files": customFileList.map((file) => file.toJson()).toList()
         });
     if (response.statusCode == 200) {
       await Future.delayed(Duration(seconds: 5));

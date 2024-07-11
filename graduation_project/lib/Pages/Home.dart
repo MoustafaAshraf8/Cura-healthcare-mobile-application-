@@ -18,7 +18,8 @@ class Category {
 }
 
 class Home extends StatefulWidget {
-  Home({super.key});
+  Function? changeNavigation;
+  Home({this.changeNavigation, super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -65,7 +66,7 @@ class _HomeState extends State<Home> {
         title: "Home Visit",
         route: "/Speciality"),
     Category(
-        imgPath: "assets/img/Categories/3.jpg", title: "EMR", route: "/Home"),
+        imgPath: "assets/img/Categories/3.jpg", title: "EMR", route: "/EMR"),
     Category(
         imgPath: "assets/img/Categories/4.jpg",
         title: "ChatBot",
@@ -73,7 +74,7 @@ class _HomeState extends State<Home> {
     Category(
         imgPath: "assets/img/Categories/5.jpg",
         title: "Offers",
-        route: "/Home"),
+        route: "/AboutUs"),
     Category(
         imgPath: "assets/img/Categories/6.jpg",
         title: "About Us",

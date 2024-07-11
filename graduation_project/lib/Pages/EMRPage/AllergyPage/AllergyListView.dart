@@ -8,13 +8,25 @@ import 'package:graduation_project/model/Patient.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import '../../SchedulePage/CustomLoadingScheduleCard.dart';
 
-class AllergyListView extends StatelessWidget {
+class AllergyListView extends StatefulWidget {
   AllergyListView({super.key});
+
+  @override
+  State<AllergyListView> createState() => _AllergyListViewState();
+}
+
+class _AllergyListViewState extends State<AllergyListView> {
+  Future<List<Allergy>> allergyList = getEMRAllergy();
+
+  void addNewAllergyToList(Allergy allergy) async {
+    (await allergyList).add(allergy);
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Allergy>>(
-        future: getEMRAllergy(),
+        future: allergyList,
         builder: (BuildContext context, AsyncSnapshot<List<Allergy>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Expanded(
@@ -32,6 +44,7 @@ class AllergyListView extends StatelessWidget {
           } else if (snapshot.hasError || !snapshot.hasData) {
             return Text("error");
           }
+
           return Expanded(
             child: ListView.builder(
               shrinkWrap: true,
@@ -42,7 +55,8 @@ class AllergyListView extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 10),
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     child: InkWell(
-                      onTap: () => getCustomAllergyModalBottomSheet(context),
+                      onTap: () => getCustomAllergyModalBottomSheet(
+                          context, addNewAllergyToList),
                       child: Container(
                         margin: EdgeInsets.only(bottom: 10),
                         width: MediaQuery.of(context).size.width,

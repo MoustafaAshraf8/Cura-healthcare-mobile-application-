@@ -4,6 +4,7 @@ import 'package:graduation_project/Pages/ChatBot.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ForgetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/ResetPassword.dart';
 import 'package:graduation_project/Pages/ForgetPassword/VerificationCode.dart';
+import 'package:graduation_project/Pages/Home.dart';
 import 'package:graduation_project/Pages/MainLayout.dart';
 import 'package:graduation_project/Pages/MapPage/MapPage.dart';
 import 'package:graduation_project/Pages/Profile/EditMyAccount.dart';
@@ -69,6 +70,7 @@ class MyApp extends StatelessWidget {
 
         AppRouter.getPolicyAndAgreementsRoute(): (context) => policy(),
         AppRouter.getChatBotRoute(): (context) => chatScreen(),
+        AppRouter.getHomeRoute(): (context) => Home(),
         "/map": (context) => Mappage()
       },
     );

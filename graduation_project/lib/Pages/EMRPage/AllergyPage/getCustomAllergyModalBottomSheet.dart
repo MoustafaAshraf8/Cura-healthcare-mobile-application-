@@ -14,7 +14,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../FileCard.dart';
 
-void getCustomAllergyModalBottomSheet(BuildContext context) {
+void getCustomAllergyModalBottomSheet(
+    BuildContext context, Function addNewAllergyToList) {
   TextEditingController allergenTextEditingController = TextEditingController();
   TextEditingController reactionTextEditingController = TextEditingController();
   TextEditingController notesTextEditingController = TextEditingController();
@@ -45,6 +46,8 @@ void getCustomAllergyModalBottomSheet(BuildContext context) {
                   reactionTextEditingController.text.length > 0 &&
                   notesTextEditingController.text.length > 0 &&
                   selectedDate != null) {
+                print("imageXfileList: ${imageXfileList.length}");
+                print("fileList: ${fileList.length}");
                 List<CustomFile> customFileList = [];
                 imageXfileList.map((img) {
                   print(img.path);
@@ -62,21 +65,44 @@ void getCustomAllergyModalBottomSheet(BuildContext context) {
                           encoding: encoding,
                           mimeType: mimeType)));
                 });
-                fileList.map((element) {
-                  PlatformFile platformFile = element.files.first;
-                  File file = File(platformFile.path as String);
-                  Uint8List bytes = file.readAsBytesSync();
-                  String base64Image = base64Encode(bytes);
-                  String filename = file.path.split('/').last;
-                  String encoding = "7bit";
-                  String mimeType = file.path.split('/').last.split('.').last;
-                  customFileList.add(new CustomFile(
+                // fileList.map((element) {
+                //   PlatformFile platformFile = element.files.first;
+                //   File file = File(platformFile.path as String);
+                //   Uint8List bytes = file.readAsBytesSync();
+                //   String base64Image = base64Encode(bytes);
+                //   String filename = file.path.split('/').last;
+                //   String encoding = "7bit";
+                //   String mimeType = file.path.split('/').last.split('.').last;
+                //   customFileList.add(new CustomFile(
+                //       base64: base64Image,
+                //       metadata: new CustomFileMetaData(
+                //           filename: filename,
+                //           encoding: encoding,
+                //           mimeType: mimeType)));
+                // });
+                for (var filePickerResult in fileList) {
+                  for (var platformFile in filePickerResult.files) {
+                    File file = File(platformFile.path!);
+                    Uint8List bytes = file.readAsBytesSync();
+                    String base64Image = base64Encode(bytes);
+                    String filename = platformFile.name;
+                    String encoding = "7bit";
+                    String mimeType =
+                        platformFile.extension ?? 'application/octet-stream';
+
+                    CustomFile customFile = CustomFile(
                       base64: base64Image,
-                      metadata: new CustomFileMetaData(
-                          filename: filename,
-                          encoding: encoding,
-                          mimeType: mimeType)));
-                });
+                      metadata: CustomFileMetaData(
+                        filename: filename,
+                        encoding: encoding,
+                        mimeType: mimeType,
+                      ),
+                    );
+
+                    customFileList.add(customFile);
+                  }
+                }
+
                 Allergy allergy = new Allergy(
                     id: "",
                     allergen: allergenTextEditingController.text,
@@ -85,17 +111,20 @@ void getCustomAllergyModalBottomSheet(BuildContext context) {
                     diagnosisDate: selectedDate!,
                     severity: (isSevere) ? "severe" : "not severe",
                     file: []);
-                // revertLoading();
-                // bool result = await postNewAllergy(
-                //   allergy: allergy,
-                //   customFileList: customFileList,
-                // );
-                // if (result) {
-                //   Navigator.of(context).pop();
-                // } else {
-                //   revertLoading();
-                // }
-                print(imageXfileList.length);
+
+                print("customFileList: ${customFileList.length}");
+
+                revertLoading();
+                bool result = await postNewAllergy(
+                  allergy: allergy,
+                  customFileList: customFileList,
+                );
+                if (result) {
+                  await addNewAllergyToList(allergy);
+                  Navigator.of(context).pop();
+                } else {
+                  revertLoading();
+                }
               }
             }
 

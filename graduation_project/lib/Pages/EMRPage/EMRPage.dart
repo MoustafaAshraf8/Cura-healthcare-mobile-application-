@@ -50,7 +50,7 @@ class _EMRPageState extends State<EMRPage> {
                           color: Colors.white)),
                   actions: [
                     // Icon(
-                    //   Icons.history,
+                    //   Icons.arrow_back,
                     //   color: Colors.white,
                     //   size: 27,
                     // ),

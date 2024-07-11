@@ -16,6 +16,11 @@ class MainLayout extends StatefulWidget {
 class _MainLayoutState extends State<MainLayout> {
   var search = false;
   int currentView = 0;
+  void changeNavigation(int index) {
+    setState(() {
+      currentView = index;
+    });
+  }
 
   void revertSearch() {
     setState(() {

@@ -19,7 +19,11 @@ class CustomFile {
     }
   }
 
-  Object getCreateObject() {
-    return {base64: this.base64, metadata: this.metadata.getCreateObject()};
+  // Object getCreateObject() {
+  //   return {base64: this.base64, metadata: this.metadata.getCreateObject()};
+  // }
+
+  Map<String, dynamic> toJson() {
+    return {'base64': base64, 'metadata': this.metadata.toJson()};
   }
 }

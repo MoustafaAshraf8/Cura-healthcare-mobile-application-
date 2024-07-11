@@ -4,7 +4,7 @@ import 'package:graduation_project/model/Patient.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<List<dynamic>> getSchedule() async {
-  await Future.delayed(Duration(seconds: 5));
+  await Future.delayed(Duration(seconds: 3));
   try {
     final prefs = await SharedPreferences.getInstance();
     var patientDataString = await prefs.getString('patient');

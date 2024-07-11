@@ -27,4 +27,12 @@ class CustomFileMetaData {
       mimeType: this.mimeType
     };
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'filename': filename,
+      'encoding': encoding,
+      'mimeType': mimeType,
+    };
+  }
 }
